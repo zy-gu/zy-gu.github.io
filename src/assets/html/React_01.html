@@ -1,0 +1,1180 @@
+<!DOCTYPE html><html lang="en"><head>
+<title> React学习(一)之初识React---小书匠,在线编辑器,MARKDOWN,Evernote,文件版本</title>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="()">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style type="text/css">
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+
+h1.story_title {
+	margin: 0.7em 0;
+}
+.story_tags {
+	margin: 0 0 1.2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0;
+	margin: 1.0em 0 .6em 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 40px;
+}
+
+h1 {
+  font-size: 38.5px;
+}
+
+h2 {
+  font-size: 31.5px;
+}
+
+h3 {
+  font-size: 24.5px;
+}
+
+h4 {
+  font-size: 17.5px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11.9px;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 35px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt,
+dd {
+  line-height: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #dddddd;
+}
+
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 20px;
+}
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0;
+}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+	border: 1px solid rgba(34,36,38,.15);
+}
+.tag.label{
+display: inline-block;
+vertical-align: baseline;
+line-height: 1;
+margin: 0em 0.125em;
+background-color: #e8e8e8;
+border-color: #e8e8e8;
+background-image: none;
+padding: 0.6em 0.8em;
+color: rgba(0, 0, 0, 0.6);
+text-transform: none;
+font-weight: bold;
+border-radius: 0.2857rem;
+box-sizing: border-box;
+font-size: 0.7428rem;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #ffffff;
+}
+
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+.table-celled.table tr td,.table-celled.table tr th {
+    border-left: 1px solid rgba(34,36,38,.1)
+}
+
+.table-celled.table tr td:first-child,.table-celled.table tr th:first-child {
+    border-left: none
+}
+
+.toc ul {
+	list-style: none;
+}
+p {
+	line-height: 1.6;
+}
+body>p {
+  margin-bottom: 1.8em;
+}
+body>p>img.center,
+body>p>a>img.center {
+  display: block;
+  margin: 0 auto;
+  background-color: rgba(128,128,128,0.3);
+}
+body {
+	font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'Hiragino Sans GB', STHeiti, "Microsoft YaHei", "微软雅黑", 'WenQuanYi Micro Hei', STXihei, "华文细黑", Heiti, "黑体", SimSun, "宋体", Song, sans-serif;
+  font-size: 1.15em;
+  font-weight: 100;
+//  line-height: 1.8em;
+  color: #2f2f2f;
+}
+em.cjk_emphasis{
+	font-style: normal;
+	font-family: Georgia,"Times New Roman",Times,"楷体","AR PL UKai CN", "NSimSun","Songti SC","SimSun",serif!important;
+}
+body dt,
+body dd {
+  line-height: 1.35em;
+}
+body code, body .xiaoshujiang_code {
+//	background-color: #D6DBDF;
+	border: 0;
+  border-radius: 4px;
+//  color: #2C3E50;
+  font-size: 90%;
+//  padding: 2px 4px;
+}
+code {
+	background-color: #D6DBDF;
+	border-radius: 4px;
+	color: #2C3E50;
+	padding: 2px 4px;
+}
+.xiaoshujiang_code ol{
+	margin-bottom: 0px;
+}
+body h1 {
+  line-height: 1.6;
+}
+body h2 {
+  line-hieght: 1.1;
+}
+body h3 {
+  line-height: 1.1;
+}
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ * Copyright (c) 2014-2015, Asciidocfx Team, (MIT Licensed)
+ * https://github.com/asciidocfx/highlight-treeview.js
+ */
+.language-treeview.hljs{
+  position: relative;
+}
+.hljs-folder,
+.hljs-hiddenfile,
+.hljs-file {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    height: 16px;
+}
+.hljs-folder:before,
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    top: 0;
+    content: '';
+    width: 14px;
+    height: 12px;
+    margin-top: 0px;
+    margin-right: 3px;
+    position: relative;
+    display: inline-block;
+    background-size: 14px;
+    background-repeat: no-repeat;
+}
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    height: 14px;
+    margin-left: 1px;
+}
+.hljs-hiddenfile {
+    opacity: 0.6;
+}
+.hljs-file.photo:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c5";
+}
+.hljs-file.plain:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f016";
+}
+.hljs-file.source:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c9";
+}
+.hljs-file.archive:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c6";
+}
+.hljs-file.audio:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c7";
+}
+.hljs-file.video:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c8";
+}
+.hljs-file.pdf:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c1";
+}
+.hljs-file.xls:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c3";
+}
+.hljs-file.doc:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c2";
+}
+.hljs-file.ppt:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c4";
+}
+.hljs-folder:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f114";
+}
+.hljs-hiddenfile:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f016";
+}
+.hljs-tvline {
+    margin-left: 6px;
+    position: absolute;
+    text-indent: -99em;
+    padding-bottom: 8px;
+    vertical-align: top;
+    display: inline-block;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch {
+    width: 8px;
+    height: 8px;
+    margin-top: -1px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch.win {
+    width: 14px;
+    margin-right: 2px;
+}
+.hljs-folder-last-branch {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-last-branch.win {
+    width: 13px;
+    margin-right: 2px;
+}
+
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ */
+
+
+.mark{
+	border: 0;
+  background-color: #ddf3e7;
+  border-radius: 4px;
+  color: #29754d;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+.line_mark{
+	border: 1px dashed #3A4C42;
+}
+code .mark, .xiaoshujiang_code .mark{
+	border-radius: 0px;
+	font-size: initial;
+	padding: initial;
+}
+a.attachment{
+	background-color: #ecf0f3;
+	border: 1px solid #bec6cb;
+	display: inline-block;
+	padding: 5px;
+	margin: 2px;
+	min-width: 250px;
+}
+a.attachment i.fa{
+	font-size: 3em;
+  float: left;
+  margin-right: 0.2em;
+}
+a.attachment .filename{
+	vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+}
+a.attachment .filesize{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  opacity: .6;
+  font-size: 80%;
+  white-space: nowrap;
+}
+.checkbox .checked{
+	text-decoration: line-through;
+}
+.flow-chart, .sequence-diagram{
+	text-align: center;
+}
+.plot, .plot-image{
+	text-align: center;
+	min-height: 200px;
+	min-width: 200px;
+}
+
+pre, .xiaoshujiang_pre {
+	line-height: initial !important;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+.xiaoshujiang_code_container pre{
+	margin: 0px;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk{
+	box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+	margin: 1em 0;
+	padding: 1em;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk_hide_code{
+	box-shadow: initial;
+	padding: initial;
+	padding-bottom: 2em;
+}
+.xiaoshujiang_code_container .out_put{
+	box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+	margin: 1em 0;
+	background-color: #FCFFF5;
+	color: #2C662D;
+	padding: 1em;
+}
+.xiaoshujiang_code_container .out_put_error{
+	background-color: #FFF6F6;
+	color: #9F3A38;
+	margin: 1em 0;
+	box-shadow: 0 0 0 1px #E0B4B4 inset,0 0 0 0 transparent;
+	padding: 1em;
+}
+
+.xiaoshujiang_pre {
+	font-family: monospace;
+	white-space: pre;
+}
+
+.story_align_left, .story_align_left .story_image_container {
+	text-align: left;
+}
+.story_align_right, .story_align_right .story_image_container {
+	text-align: right;
+}
+.story_align_center, .story_align_center .story_image_container {
+	text-align: center;
+}
+.story_align_justify, .story_align_justify .story_image_container {
+	text-align: justify;
+}
+
+
+/** 
+ * code line nums
+ */
+code.hljs.code_linenums, .xiaoshujiang_code.hljs.code_linenums{
+	position: relative;
+}
+.ol_linenums{
+	padding: 0px;
+	margin-left: 30px;
+	border-left: 1px solid #e0e0e0;
+}
+.li_linenum{
+	line-height: 20px;
+	margin-left: 10px;
+	list-style: none;
+	counter-increment: lines 1;
+}
+.li_linenum.li_list_style{
+	list-style: inherit;
+	margin-left: 5px;
+}
+.li_linenum:before, .li_linenum_before_span{
+	content: counter(lines, decimal);
+  position: absolute;
+  left: 0px;
+  text-align: center;
+  width: 2.5em;
+	opacity: 0.5;
+  vertical-align: top;
+}
+.li_linenum_before_span_hide{
+	display: none;
+}
+.xiaoshujiang_code .code_line_break_hack{
+	margin:0;
+	border:0;
+	border-top:0;
+	border-bottom:0;
+}
+/** 
+ * code line nums
+ */
+.mathjax-container{
+	text-align: center;
+}
+div.mathjax{
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+text{
+	font-size: 14px;
+}
+
+/**
+ * block image
+ */
+
+.story_image_container{
+	text-align: center;
+}
+.story_image_container>.story_image{
+	display: inline-block;
+  position: relative;
+	max-width: 80%;
+}
+.story_image_caption{
+	border-bottom: 1px solid #d9d9d9;
+	display: inline-block;
+	color: #999;
+	padding: 10px;
+}
+.story_image_blank_caption{
+	border-bottom: 0px;
+}
+/**
+.story_image:before, .story_image:after{
+	content: '';
+	position: absolute;
+	z-index: -2;
+	bottom: 13px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	border-radius: 10px/90px;
+	box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.story_image:after {
+	right: 10px;
+	left: auto;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+**/
+.story_image>img{
+	border-radius: 0.3125em;
+	box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+}
+.story_inline_image>img{
+	max-width: 50%;
+	vertical-align: bottom;
+}
+.story_remote_resource_block{
+	text-align: center;
+}
+.xiaoshujiang_code_container {
+	margin: 1em 0px;
+	position: relative;
+	padding-bottom: 2em;
+}
+
+
+.xiaoshujiang_code_title_container{
+	font-size: 70%;
+	opacity: 0.5;
+}
+.xiaoshujiang_code_title_container>.xiaoshujiang_code_infos{
+	float: right;
+}
+
+
+.task-list-item{
+	list-style: none;
+}
+.task-list-item>input{
+	margin: 0 0 0 -20px;
+}
+.video_container{
+	width: 100%;
+	display: table;
+	text-align: center;
+	position: relative;
+	padding-bottom: 56.25%!important;
+}
+.slideshare_container .inner{
+	position: relative;
+	width: 100%;
+}
+.slideshare_container .inner iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.video_container iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	vertical-align: middle;
+}
+
+kbd{
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 11px;
+	line-height: 10px;
+	color: #555;
+	vertical-align: middle;
+	background-color: #fcfcfc;
+	border: solid 1px #ccc;
+	border-bottom-color: #bbb;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.blank_anchor_id {
+    float: left;
+}
+.blank_anchor_id {
+    visibility: hidden;
+}
+.blank_anchor_id:before {
+    content: 'a';
+}
+
+blockquote footer{
+	margin: 1em 0;
+	font-style: italic;
+}
+
+blockquote footer cite {
+	margin: 0 1em;
+}
+/*wavedrom start*/
+
+.wavedrom_svg text, .wavedrom_svg_defs text {
+	font-size:11pt;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	font-stretch:normal;
+	text-align:center;
+	fill-opacity:1;
+	font-family:Helvetica
+}
+.wavedrom_svg .muted, .wavedrom_svg_defs .muted {
+	fill:#aaa
+}
+.wavedrom_svg .warning, .wavedrom_svg_defs .warning {
+	fill:#f6b900
+}
+.wavedrom_svg .error, .wavedrom_svg_defs .error {
+	fill:#f60000
+}
+.wavedrom_svg .info, .wavedrom_svg_defs .info {
+	fill:#0041c4
+}
+.wavedrom_svg .success, .wavedrom_svg_defs .success {
+	fill:#00ab00
+}
+.wavedrom_svg .h1, .wavedrom_svg_defs .h1 {
+	font-size:33pt;
+	font-weight:bold
+}
+.wavedrom_svg .h2, .wavedrom_svg_defs .h2 {
+	font-size:27pt;
+	font-weight:bold
+}
+.wavedrom_svg .h3, .wavedrom_svg_defs .h3 {
+	font-size:20pt;
+	font-weight:bold
+}
+.wavedrom_svg .h4, .wavedrom_svg_defs .h4 {
+	font-size:14pt;
+	font-weight:bold
+}
+.wavedrom_svg .h5, .wavedrom_svg_defs .h5 {
+	font-size:11pt;
+	font-weight:bold
+}
+.wavedrom_svg .h6, .wavedrom_svg_defs .h6 {
+	font-size:8pt;
+	font-weight:bold
+}
+.wavedrom_svg_defs .s1 {
+	fill:none;
+	stroke:#000;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none
+}
+.wavedrom_svg_defs .s2 {
+	fill:none;
+	stroke:#000;
+	stroke-width:0.5;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none
+}
+.wavedrom_svg_defs .s3 {
+	color:#000;
+	fill:none;
+	stroke:#000;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:1,3;
+	stroke-dashoffset:0;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s4 {
+	color:#000;
+	fill:none;
+	stroke:#000;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none;
+	stroke-dashoffset:0;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible
+}
+.wavedrom_svg_defs .s5 {
+	fill:#fff;
+	stroke:none
+}
+.wavedrom_svg_defs .s6 {
+	color:#000;
+	fill:#ffffb4;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s7 {
+	color:#000;
+	fill:#ffe0b9;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s8 {
+	color:#000;
+	fill:#b9e0ff;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s9 {
+	fill:#000;
+	fill-opacity:1;
+	stroke:none
+}
+.wavedrom_svg_defs .s10 {
+	color:#000;
+	fill:#fff;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s11 {
+	fill:#0041c4;
+	fill-opacity:1;
+	stroke:none
+}
+.wavedrom_svg_defs .s12 {
+	fill:none;
+	stroke:#0041c4;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none
+}
+
+
+/*wavedrom stop*/
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rule .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function,
+.hljs-name {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+
+.hljs{background: #f5f5f5;border: 1px solid #ccc;color:#2f2f2f;}
+h1.story_title {font-size:28px;}
+
+</style>
+</head><body>
+<div><div class="preview" id="wmd-preview">
+
+	<div class="preview html_preview"><h1 class="story_title">React学习(一)之初识React</h1><div class="story_tags"><div class="tag blue label">React</div></div><div class="xiaoshujiang_element xsj_anchor">
+  <a name="reacte698afe4bb80e4b988efbc9f_1" class="blank_anchor_name" target="_blank"></a><a id="reacte698afe4bb80e4b988efbc9f_1" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h2>React是什么？</h2>
+<ul>
+<li>React是一个用户构建用户界面的JavaScript库。</li>
+<li>React主要用于构建UI，很多人认为React是MVC中的V（视图）。</li>
+<li>React起源于Facebook的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。</li>
+<li>React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="reacte79a84e789b9e782b9_2" class="blank_anchor_name" target="_blank"></a><a id="reacte79a84e789b9e782b9_2" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h2>React的特点</h2>
+<ol>
+<li><strong>声明式设计</strong> - React采用声明范式，可以轻松描述应用。</li>
+<li><strong>高效</strong> - React通过对DOM的模拟，最大限度地减少与DOM的交互。</li>
+<li><strong>灵活</strong> − React可以与已知的库或框架很好地配合。</li>
+<li><strong>JSX</strong> − JSX 是 JavaScript 语法的扩展。React 开发不一定使用 JSX ，但我们建议使用它。</li>
+<li><strong>组件</strong> − 通过 React 构建组件，使得代码更加容易得到复用，能够很好的应用在大项目的开发中。</li>
+<li><strong>单向响应的数据流</strong> − React 实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。</li>
+</ol>
+<div class="xiaoshujiang_code_container"><pre><code data-info="" class="nohighlight hljs">React高效原因
+1、 虚拟（virtual）DOM，不是总是直接操作DOM
+2、 高效的DOM Diff算法，最小化页面重绘
+</code></pre></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="reacte587a0e4b8aae9878de8a681e6a682e5bfb5_3" class="blank_anchor_name" target="_blank"></a><a id="reacte587a0e4b8aae9878de8a681e6a682e5bfb5_3" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h2>React几个重要概念</h2>
+<ol>
+<li>模块与组件
+<ul>
+<li>模块：
+<ul>
+<li>理解：向外提供特定功能的js，一般就是一个js文件</li>
+<li>作用：简化js的编写，阅读，提高运行效率</li>
+</ul>
+</li>
+<li>组件：
+<ul>
+<li>理解：用来实现特定功能效果的代码集合（html/css/js）</li>
+<li>作用：复用，简化项目编码，提高运行效率</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>模块化与组件化
+<ul>
+<li>模块化：当应用的js都以模块化的概念来编写的，这个应用就是模块化的应用</li>
+<li>组件化：当应用是以多组件的方式来实现功能的，那这个应用就是一个组件化的应用</li>
+</ul>
+</li>
+</ol>
+<p><strong>如果一个应用使用模块化和组件化去进行开发，那么这个项目又叫工程化项目</strong></p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e5bfabe9809fe5bc80e5a78b_4" class="blank_anchor_name" target="_blank"></a><a id="e5bfabe9809fe5bc80e5a78b_4" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h2>快速开始</h2>
+<p>在页面中导入三个js文件，分别为：</p>
+<ul>
+<li>react.js：React的核心库</li>
+<li>react-dom.js：提供DOM的扩展库(虚拟DOM)</li>
+<li>babel.min.js：解析JSX语法代码专为纯JS语法代码的库<br>
+<strong>注意，上述三个文件引入顺序</strong></li>
+</ul>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-html hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span><span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"zh-cn"</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span>    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/react.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span>    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="8"><span class="li_linenum_before_span li_linenum_before_span_hide">8</span>    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"js/babel.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="9"><span class="li_linenum_before_span li_linenum_before_span_hide">9</span><span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="10"><span class="li_linenum_before_span li_linenum_before_span_hide">10</span><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="11"><span class="li_linenum_before_span li_linenum_before_span_hide">11</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"container"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="12"><span class="li_linenum_before_span li_linenum_before_span_hide">12</span><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/babel"</span>&gt;</span><span class="javascript"></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="13"><span class="li_linenum_before_span li_linenum_before_span_hide">13</span><span class="hljs-tag">    <span class="hljs-comment">//创建虚拟Dom对象</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="14"><span class="li_linenum_before_span li_linenum_before_span_hide">14</span><span class="hljs-tag">    <span class="hljs-keyword">let</span> user = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>hello World!!!<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="15"><span class="li_linenum_before_span li_linenum_before_span_hide">15</span><span class="hljs-tag">    <span class="hljs-comment">//渲染虚拟Dom对象</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="16"><span class="li_linenum_before_span li_linenum_before_span_hide">16</span><span class="hljs-tag">    ReactDOM.render(user, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'container'</span>))</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="17"><span class="li_linenum_before_span li_linenum_before_span_hide">17</span><span class="hljs-tag"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="18"><span class="li_linenum_before_span li_linenum_before_span_hide">18</span><span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="19"><span class="li_linenum_before_span li_linenum_before_span_hide">19</span><span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e8999ae68b9fdom_5" class="blank_anchor_name" target="_blank"></a><a id="e8999ae68b9fdom_5" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h3>虚拟DOM</h3>
+<p>提供了一些AP来创建一种“特别”的js对象</p>
+<div class="xiaoshujiang_code_container"><pre><code data-info="" class="nohighlight hljs">    let user =React.createElement(
+        'h2',//html标签名（h1,span）
+        {id:'myTitle'},//标签属性（id,class）
+        'hello React!!!'//写入的内容
+    );
+    //等价于
+    let user = &lt;h2 id="myTitle"&gt;hello React!!!&lt;/h2&gt;;
+		
+    //以上两种方法都可以用于创建虚拟DOM
+    ReactDOM.render(user, document.getElementById('container'));
+</code></pre></div>
+<p>创建的虚拟DOM最终会被React转换为真实DOM，我们一般操作的是虚拟DOM</p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="jsx_6" class="blank_anchor_name" target="_blank"></a><a id="jsx_6" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h3>JSX</h3>
+<p>全称：JavaScript XML，React定义的一种类似XML的JS扩展语法（XML+JS）<br>
+作用：用来创建React虚拟DOM（元素）对象</p>
+<div class="xiaoshujiang_code_container"><pre><code data-info="" class="nohighlight hljs">    let ele = &lt;h1&gt;hello JSX!!!&lt;/h1&gt;;
+    //等价于
+    let msg = 'hello JSX!!!';
+    let ele = &lt;h1&gt;{msg}&lt;/h1&gt;;
+</code></pre></div>
+<p>最终创建的JSX，它不是字符串，也不是一个HTML/XML标签；而是一个JS对象<br>
+<strong>语法法则</strong></p>
+<ul>
+<li>遇到<span style="color:red;">&lt;</span>开头的代码以标签解析</li>
+<li>遇到<span style="color:red;">{</span>开头的代码，以JS语法解析；标签中的JS代码必须用{}包裹</li>
+</ul>
+<p><strong><span style="color:red;">注意：如果需要执行JSX语法，script标签需要将type属性设置为：text/babel</span></strong></p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-keyword">let</span> names = [<span class="hljs-string">'Tom'</span>, <span class="hljs-string">'Jack'</span>, <span class="hljs-string">'Bob'</span>];&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    ReactDOM.render(&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span><span class="xml">            {names}</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span><span class="xml">        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>,</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span><span class="xml">        document.getElementById('example1')</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span><span class="xml">    )</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>JSX会自动遍历数组中的所有元素，所以以上代码会在ul中输出数组的每一项，如果需要将数组以列表进行渲染，需要进行map遍历并返回</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-keyword">let</span> names = [<span class="hljs-string">'Tom'</span>, <span class="hljs-string">'Jack'</span>, <span class="hljs-string">'Bob'</span>];&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    ReactDOM.render(&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span><span class="xml">            {</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span><span class="xml">                names.map((item, index) =&gt; {</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span><span class="xml">                    return <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span>&gt;</span>{item}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span><span class="xml">                })</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="8"><span class="li_linenum_before_span li_linenum_before_span_hide">8</span><span class="xml">            }</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="9"><span class="li_linenum_before_span li_linenum_before_span_hide">9</span><span class="xml">        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>,</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="10"><span class="li_linenum_before_span li_linenum_before_span_hide">10</span><span class="xml">        document.getElementById('example1')</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="11"><span class="li_linenum_before_span li_linenum_before_span_hide">11</span><span class="xml">    )</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="12"><span class="li_linenum_before_span li_linenum_before_span_hide">12</span><span class="xml">    //key属性如果不加会出现警告（a key should be provided for list items）意思是当你创建一个元素时，必须包括一个特殊的key属性。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>参考：<a href="http://www.runoob.com/react/react-tutorial.html" target="_blank">React教程 | 菜鸟教程</a></p>
+</div>
+
+</div></div>
+</body></html>
+

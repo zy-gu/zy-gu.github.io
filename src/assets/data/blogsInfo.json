@@ -1,0 +1,49 @@
+{
+  "blogName": "曲奇的小桃酥",
+  "subtitle": "坚持就是幸福",
+  "createTime": "2018-2-16 20:35:00",
+
+  "about": {
+    "PersonalInfo": {
+      "intro": "我叫曲奇的小桃酥，直接叫我桃酥也行，92年出生于江苏南通。现在北京工作，住在霍营那一带。",
+      "introList": [
+        "善于发现和总结，习惯使用 Google 去查找问题并快速解决，热爱交流",
+        "与分享; 对互联网充满期待，对待每一件事都会用心去做到最好，一直相信事在人为",
+        "趁着年轻去做自己想做的事"
+      ],
+      "contact":[
+        "Email：guzy@ntsclong.com&emsp;||&emsp;1067919887@qq.com",
+        "QQ：1067919887&nbsp;(请注明来意)"
+      ]
+    },
+    "DesirableSkills": [
+      "熟练运用 HTML+CSS，快速精准还原设计稿，实现语义化与可读性并重的标准页面；",
+      "熟练使用 JavaScript/jQuery/Bootstrap，完成基于 DOM 的特效交互；",
+      "熟练掌握原生 JavaScript DOM  编程，且具有面向对象编程能力,对原型链、继承、作用域、闭包、回调等有一定的认知；",
+      "熟练使用 Layui/UEditor/ECharts/Plupload/Swiper/ckplayer 等第三方开源类库进行开发；",
+      "熟练运用 Ajax/JSONP 等技术，完成与后台的数据交互；",
+      "熟练运用 Sass/stylus 预处理器，实现代码简洁、适应性强、可读性佳的CSS代码；",
+      "熟悉主流MVVM框架,并能够使用 Vue全家桶(Vue+Vuex+Vue-router),并结合 ElementUI、VUX、Vant等UI组件进行项目快速开发；",
+      "熟练运用 ES6(Promise、箭头函数等)，关注页面性能优化；",
+      "熟练使用Git、GitLab、SVN等版本控制器；了解Node、webpack、gulp，可以进行一定配置和使用；",
+      "开发工具：WebStorm、Sublime Text、MarkDown、Chrome、PhotoShop"
+    ],
+    "WorkExperience": [
+      {
+        "name": "苏州恩能信息科技有限公司",
+        "time": "2015/6~2018/03",
+        "job": "前端工程师"
+      },
+      {
+        "name": "携程信息技术南通有限公司",
+        "time": "2014/04~2015/04",
+        "job": "网页制作"
+      }
+    ],
+    "ProjectExperience":[
+      {"name":"移动端web点单系统","url":""},
+      {"name":"商品运营活动","url":""},
+      {"name":"DreamClass","url":""}
+    ]
+  }
+}

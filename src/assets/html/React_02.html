@@ -1,0 +1,1123 @@
+<!DOCTYPE html><html lang="en"><head>
+<title> React学习(二)之组件与props---小书匠,在线编辑器,MARKDOWN,Evernote,文件版本</title>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="()">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style type="text/css">
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+
+h1.story_title {
+	margin: 0.7em 0;
+}
+.story_tags {
+	margin: 0 0 1.2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0;
+	margin: 1.0em 0 .6em 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 40px;
+}
+
+h1 {
+  font-size: 38.5px;
+}
+
+h2 {
+  font-size: 31.5px;
+}
+
+h3 {
+  font-size: 24.5px;
+}
+
+h4 {
+  font-size: 17.5px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11.9px;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 35px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt,
+dd {
+  line-height: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #dddddd;
+}
+
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 20px;
+}
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0;
+}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+	border: 1px solid rgba(34,36,38,.15);
+}
+.tag.label{
+display: inline-block;
+vertical-align: baseline;
+line-height: 1;
+margin: 0em 0.125em;
+background-color: #e8e8e8;
+border-color: #e8e8e8;
+background-image: none;
+padding: 0.6em 0.8em;
+color: rgba(0, 0, 0, 0.6);
+text-transform: none;
+font-weight: bold;
+border-radius: 0.2857rem;
+box-sizing: border-box;
+font-size: 0.7428rem;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #ffffff;
+}
+
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+.table-celled.table tr td,.table-celled.table tr th {
+    border-left: 1px solid rgba(34,36,38,.1)
+}
+
+.table-celled.table tr td:first-child,.table-celled.table tr th:first-child {
+    border-left: none
+}
+
+.toc ul {
+	list-style: none;
+}
+p {
+	line-height: 1.6;
+}
+body>p {
+  margin-bottom: 1.8em;
+}
+body>p>img.center,
+body>p>a>img.center {
+  display: block;
+  margin: 0 auto;
+  background-color: rgba(128,128,128,0.3);
+}
+body {
+	font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'Hiragino Sans GB', STHeiti, "Microsoft YaHei", "微软雅黑", 'WenQuanYi Micro Hei', STXihei, "华文细黑", Heiti, "黑体", SimSun, "宋体", Song, sans-serif;
+  font-size: 1.15em;
+  font-weight: 100;
+//  line-height: 1.8em;
+  color: #2f2f2f;
+}
+em.cjk_emphasis{
+	font-style: normal;
+	font-family: Georgia,"Times New Roman",Times,"楷体","AR PL UKai CN", "NSimSun","Songti SC","SimSun",serif!important;
+}
+body dt,
+body dd {
+  line-height: 1.35em;
+}
+body code, body .xiaoshujiang_code {
+//	background-color: #D6DBDF;
+	border: 0;
+  border-radius: 4px;
+//  color: #2C3E50;
+  font-size: 90%;
+//  padding: 2px 4px;
+}
+code {
+	background-color: #D6DBDF;
+	border-radius: 4px;
+	color: #2C3E50;
+	padding: 2px 4px;
+}
+.xiaoshujiang_code ol{
+	margin-bottom: 0px;
+}
+body h1 {
+  line-height: 1.6;
+}
+body h2 {
+  line-hieght: 1.1;
+}
+body h3 {
+  line-height: 1.1;
+}
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ * Copyright (c) 2014-2015, Asciidocfx Team, (MIT Licensed)
+ * https://github.com/asciidocfx/highlight-treeview.js
+ */
+.language-treeview.hljs{
+  position: relative;
+}
+.hljs-folder,
+.hljs-hiddenfile,
+.hljs-file {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    height: 16px;
+}
+.hljs-folder:before,
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    top: 0;
+    content: '';
+    width: 14px;
+    height: 12px;
+    margin-top: 0px;
+    margin-right: 3px;
+    position: relative;
+    display: inline-block;
+    background-size: 14px;
+    background-repeat: no-repeat;
+}
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    height: 14px;
+    margin-left: 1px;
+}
+.hljs-hiddenfile {
+    opacity: 0.6;
+}
+.hljs-file.photo:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c5";
+}
+.hljs-file.plain:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f016";
+}
+.hljs-file.source:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c9";
+}
+.hljs-file.archive:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c6";
+}
+.hljs-file.audio:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c7";
+}
+.hljs-file.video:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c8";
+}
+.hljs-file.pdf:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c1";
+}
+.hljs-file.xls:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c3";
+}
+.hljs-file.doc:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c2";
+}
+.hljs-file.ppt:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f1c4";
+}
+.hljs-folder:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f114";
+}
+.hljs-hiddenfile:before {
+	font: normal normal normal 14px/1 FontAwesome;
+	content: "\f016";
+}
+.hljs-tvline {
+    margin-left: 6px;
+    position: absolute;
+    text-indent: -99em;
+    padding-bottom: 8px;
+    vertical-align: top;
+    display: inline-block;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch {
+    width: 8px;
+    height: 8px;
+    margin-top: -1px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch.win {
+    width: 14px;
+    margin-right: 2px;
+}
+.hljs-folder-last-branch {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-last-branch.win {
+    width: 13px;
+    margin-right: 2px;
+}
+
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ */
+
+
+.mark{
+	border: 0;
+  background-color: #ddf3e7;
+  border-radius: 4px;
+  color: #29754d;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+.line_mark{
+	border: 1px dashed #3A4C42;
+}
+code .mark, .xiaoshujiang_code .mark{
+	border-radius: 0px;
+	font-size: initial;
+	padding: initial;
+}
+a.attachment{
+	background-color: #ecf0f3;
+	border: 1px solid #bec6cb;
+	display: inline-block;
+	padding: 5px;
+	margin: 2px;
+	min-width: 250px;
+}
+a.attachment i.fa{
+	font-size: 3em;
+  float: left;
+  margin-right: 0.2em;
+}
+a.attachment .filename{
+	vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+}
+a.attachment .filesize{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  opacity: .6;
+  font-size: 80%;
+  white-space: nowrap;
+}
+.checkbox .checked{
+	text-decoration: line-through;
+}
+.flow-chart, .sequence-diagram{
+	text-align: center;
+}
+.plot, .plot-image{
+	text-align: center;
+	min-height: 200px;
+	min-width: 200px;
+}
+
+pre, .xiaoshujiang_pre {
+	line-height: initial !important;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+.xiaoshujiang_code_container pre{
+	margin: 0px;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk{
+	box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+	margin: 1em 0;
+	padding: 1em;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk_hide_code{
+	box-shadow: initial;
+	padding: initial;
+	padding-bottom: 2em;
+}
+.xiaoshujiang_code_container .out_put{
+	box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+	margin: 1em 0;
+	background-color: #FCFFF5;
+	color: #2C662D;
+	padding: 1em;
+}
+.xiaoshujiang_code_container .out_put_error{
+	background-color: #FFF6F6;
+	color: #9F3A38;
+	margin: 1em 0;
+	box-shadow: 0 0 0 1px #E0B4B4 inset,0 0 0 0 transparent;
+	padding: 1em;
+}
+
+.xiaoshujiang_pre {
+	font-family: monospace;
+	white-space: pre;
+}
+
+.story_align_left, .story_align_left .story_image_container {
+	text-align: left;
+}
+.story_align_right, .story_align_right .story_image_container {
+	text-align: right;
+}
+.story_align_center, .story_align_center .story_image_container {
+	text-align: center;
+}
+.story_align_justify, .story_align_justify .story_image_container {
+	text-align: justify;
+}
+
+
+/** 
+ * code line nums
+ */
+code.hljs.code_linenums, .xiaoshujiang_code.hljs.code_linenums{
+	position: relative;
+}
+.ol_linenums{
+	padding: 0px;
+	margin-left: 30px;
+	border-left: 1px solid #e0e0e0;
+}
+.li_linenum{
+	line-height: 20px;
+	margin-left: 10px;
+	list-style: none;
+	counter-increment: lines 1;
+}
+.li_linenum.li_list_style{
+	list-style: inherit;
+	margin-left: 5px;
+}
+.li_linenum:before, .li_linenum_before_span{
+	content: counter(lines, decimal);
+  position: absolute;
+  left: 0px;
+  text-align: center;
+  width: 2.5em;
+	opacity: 0.5;
+  vertical-align: top;
+}
+.li_linenum_before_span_hide{
+	display: none;
+}
+.xiaoshujiang_code .code_line_break_hack{
+	margin:0;
+	border:0;
+	border-top:0;
+	border-bottom:0;
+}
+/** 
+ * code line nums
+ */
+.mathjax-container{
+	text-align: center;
+}
+div.mathjax{
+	max-width: 700px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+text{
+	font-size: 14px;
+}
+
+/**
+ * block image
+ */
+
+.story_image_container{
+	text-align: center;
+}
+.story_image_container>.story_image{
+	display: inline-block;
+  position: relative;
+	max-width: 80%;
+}
+.story_image_caption{
+	border-bottom: 1px solid #d9d9d9;
+	display: inline-block;
+	color: #999;
+	padding: 10px;
+}
+.story_image_blank_caption{
+	border-bottom: 0px;
+}
+/**
+.story_image:before, .story_image:after{
+	content: '';
+	position: absolute;
+	z-index: -2;
+	bottom: 13px;
+	left: 10px;
+	width: 50%;
+	height: 20%;
+	border-radius: 10px/90px;
+	box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.story_image:after {
+	right: 10px;
+	left: auto;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	-o-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+
+**/
+.story_image>img{
+	border-radius: 0.3125em;
+	box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+}
+.story_inline_image>img{
+	max-width: 50%;
+	vertical-align: bottom;
+}
+.story_remote_resource_block{
+	text-align: center;
+}
+.xiaoshujiang_code_container {
+	margin: 1em 0px;
+	position: relative;
+	padding-bottom: 2em;
+}
+
+
+.xiaoshujiang_code_title_container{
+	font-size: 70%;
+	opacity: 0.5;
+}
+.xiaoshujiang_code_title_container>.xiaoshujiang_code_infos{
+	float: right;
+}
+
+
+.task-list-item{
+	list-style: none;
+}
+.task-list-item>input{
+	margin: 0 0 0 -20px;
+}
+.video_container{
+	width: 100%;
+	display: table;
+	text-align: center;
+	position: relative;
+	padding-bottom: 56.25%!important;
+}
+.slideshare_container .inner{
+	position: relative;
+	width: 100%;
+}
+.slideshare_container .inner iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.video_container iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	vertical-align: middle;
+}
+
+kbd{
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 11px;
+	line-height: 10px;
+	color: #555;
+	vertical-align: middle;
+	background-color: #fcfcfc;
+	border: solid 1px #ccc;
+	border-bottom-color: #bbb;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.blank_anchor_id {
+    float: left;
+}
+.blank_anchor_id {
+    visibility: hidden;
+}
+.blank_anchor_id:before {
+    content: 'a';
+}
+
+blockquote footer{
+	margin: 1em 0;
+	font-style: italic;
+}
+
+blockquote footer cite {
+	margin: 0 1em;
+}
+/*wavedrom start*/
+
+.wavedrom_svg text, .wavedrom_svg_defs text {
+	font-size:11pt;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	font-stretch:normal;
+	text-align:center;
+	fill-opacity:1;
+	font-family:Helvetica
+}
+.wavedrom_svg .muted, .wavedrom_svg_defs .muted {
+	fill:#aaa
+}
+.wavedrom_svg .warning, .wavedrom_svg_defs .warning {
+	fill:#f6b900
+}
+.wavedrom_svg .error, .wavedrom_svg_defs .error {
+	fill:#f60000
+}
+.wavedrom_svg .info, .wavedrom_svg_defs .info {
+	fill:#0041c4
+}
+.wavedrom_svg .success, .wavedrom_svg_defs .success {
+	fill:#00ab00
+}
+.wavedrom_svg .h1, .wavedrom_svg_defs .h1 {
+	font-size:33pt;
+	font-weight:bold
+}
+.wavedrom_svg .h2, .wavedrom_svg_defs .h2 {
+	font-size:27pt;
+	font-weight:bold
+}
+.wavedrom_svg .h3, .wavedrom_svg_defs .h3 {
+	font-size:20pt;
+	font-weight:bold
+}
+.wavedrom_svg .h4, .wavedrom_svg_defs .h4 {
+	font-size:14pt;
+	font-weight:bold
+}
+.wavedrom_svg .h5, .wavedrom_svg_defs .h5 {
+	font-size:11pt;
+	font-weight:bold
+}
+.wavedrom_svg .h6, .wavedrom_svg_defs .h6 {
+	font-size:8pt;
+	font-weight:bold
+}
+.wavedrom_svg_defs .s1 {
+	fill:none;
+	stroke:#000;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none
+}
+.wavedrom_svg_defs .s2 {
+	fill:none;
+	stroke:#000;
+	stroke-width:0.5;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none
+}
+.wavedrom_svg_defs .s3 {
+	color:#000;
+	fill:none;
+	stroke:#000;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:1,3;
+	stroke-dashoffset:0;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s4 {
+	color:#000;
+	fill:none;
+	stroke:#000;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none;
+	stroke-dashoffset:0;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible
+}
+.wavedrom_svg_defs .s5 {
+	fill:#fff;
+	stroke:none
+}
+.wavedrom_svg_defs .s6 {
+	color:#000;
+	fill:#ffffb4;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s7 {
+	color:#000;
+	fill:#ffe0b9;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s8 {
+	color:#000;
+	fill:#b9e0ff;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s9 {
+	fill:#000;
+	fill-opacity:1;
+	stroke:none
+}
+.wavedrom_svg_defs .s10 {
+	color:#000;
+	fill:#fff;
+	fill-opacity:1;
+	fill-rule:nonzero;
+	stroke:none;
+	stroke-width:1px;
+	marker:none;
+	visibility:visible;
+	display:inline;
+	overflow:visible;
+	enable-background:accumulate
+}
+.wavedrom_svg_defs .s11 {
+	fill:#0041c4;
+	fill-opacity:1;
+	stroke:none
+}
+.wavedrom_svg_defs .s12 {
+	fill:none;
+	stroke:#0041c4;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:miter;
+	stroke-miterlimit:4;
+	stroke-opacity:1;
+	stroke-dasharray:none
+}
+
+
+/*wavedrom stop*/
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.diff .hljs-header,
+.hljs-doctype,
+.hljs-pi,
+.lisp .hljs-string,
+.hljs-javadoc {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-winutils,
+.method,
+.hljs-addition,
+.css .hljs-tag,
+.hljs-request,
+.hljs-status,
+.nginx .hljs-title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-command,
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-rule .hljs-value,
+.hljs-phpdoc,
+.hljs-dartdoc,
+.tex .hljs-formula,
+.hljs-regexp,
+.hljs-hexcolor,
+.hljs-link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-localvars,
+.hljs-chunk,
+.hljs-decorator,
+.hljs-built_in,
+.hljs-identifier,
+.vhdl .hljs-literal,
+.hljs-id,
+.css .hljs-function,
+.hljs-name {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.smalltalk .hljs-number,
+.hljs-constant,
+.hljs-class .hljs-title,
+.hljs-parent,
+.hljs-type,
+.hljs-link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-preprocessor,
+.hljs-preprocessor .hljs-keyword,
+.hljs-pragma,
+.hljs-shebang,
+.hljs-symbol,
+.hljs-symbol .hljs-string,
+.diff .hljs-change,
+.hljs-special,
+.hljs-attr_selector,
+.hljs-subst,
+.hljs-cdata,
+.css .hljs-pseudo,
+.hljs-header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-deletion,
+.hljs-important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.hljs-link_label {
+  color: #6c71c4;
+}
+
+.tex .hljs-formula {
+  background: #eee8d5;
+}
+
+.hljs{background: #f5f5f5;border: 1px solid #ccc;color:#2f2f2f;}
+h1.story_title {font-size:28px;}
+
+</style>
+</head><body>
+<div><div class="preview" id="wmd-preview">
+
+	<div class="preview html_preview"><h1 class="story_title">React学习(二)之组件与props</h1><div class="story_tags"><div class="tag blue label">React</div></div><p>组件可以将UI切分成一些的独立的、可复用的部件，这样你就只需专注于构建每一个单独的部件。<br>
+组件从概念上看就像是函数，它可以接收任意的输入值（称之为“props”），并返回一个需要在页面上展示的React元素。</p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e5ae9ae4b989e7bb84e4bbb6_1" class="blank_anchor_name" target="_blank"></a><a id="e5ae9ae4b989e7bb84e4bbb6_1" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h3>定义组件</h3>
+<p>方式一：工厂函数（无状态、最简洁）</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyComponent1</span><span class="hljs-params">()</span> </span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>工厂函数创建的<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-keyword">    }</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>方式二：ES6类语法（复杂组件）</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-comment">//这里必须extends React.Component及继承React.Component</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>        render() {&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>            <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>ES6创建的<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>;</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>        }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span>    }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e7bb84e4bbb6e6b8b2e69f93_2" class="blank_anchor_name" target="_blank"></a><a id="e7bb84e4bbb6e6b8b2e69f93_2" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h3>组件渲染</h3>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-comment">//这里注意，组件渲染引入需要用&lt;ComponentName/&gt;包裹</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">MyComponent1</span>/&gt;</span>, document.getElementById('example1'));</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="xml">    ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">MyComponent2</span>/&gt;</span>, document.getElementById('example2'));</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p><strong></strong></p><p style="color:red;"><strong>注意：<br>
+1、组件的首字母需要大写，因为组件是以标签的形式引入，所以需要与HTML标签进行区分<br>
+2、虚拟DOM元素必须有只有一个根元素<br>
+3、虚拟DOM元素必须有结束标签</strong></p><p></p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e7bb84e4bbb6e79a84e4b889e5a4a7e5b19ee680a7e4b98bprops_3" class="blank_anchor_name" target="_blank"></a><a id="e7bb84e4bbb6e79a84e4b889e5a4a7e5b19ee680a7e4b98bprops_3" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h3>组件的三大属性之props</h3>
+<ol>
+<li>每个组件对象都会有props（properties的简写）属性</li>
+<li>组件标签的所有属性都保存在props中</li>
+<li>内部读取某个属性值：this.props.propertyName</li>
+<li>作用：通过标签属性从组件外向组件内传递数据（单向）</li>
+<li>对props中的属性值进行类型限制和必要性限制</li>
+</ol>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e59fbae69cace794a8e6b395_4" class="blank_anchor_name" target="_blank"></a><a id="e59fbae69cace794a8e6b395_4" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h4>基本用法</h4>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-comment">//定义组件</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>        render(){&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>            <span class="hljs-keyword">return</span> (&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span><span class="xml">                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>姓名：{this.props.username}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span><span class="xml">                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>性别：{this.props.sex}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="8"><span class="li_linenum_before_span li_linenum_before_span_hide">8</span><span class="xml">                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>年龄：{this.props.age}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="9"><span class="li_linenum_before_span li_linenum_before_span_hide">9</span><span class="xml">                <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="10"><span class="li_linenum_before_span li_linenum_before_span_hide">10</span><span class="xml">            )</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="11"><span class="li_linenum_before_span li_linenum_before_span_hide">11</span>        }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="12"><span class="li_linenum_before_span li_linenum_before_span_hide">12</span>    }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="13"><span class="li_linenum_before_span li_linenum_before_span_hide">13</span>    <span class="hljs-comment">//设置组件的默认props属性值</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="14"><span class="li_linenum_before_span li_linenum_before_span_hide">14</span>    Person.defaultProps={&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="15"><span class="li_linenum_before_span li_linenum_before_span_hide">15</span>        sex:<span class="hljs-string">'女'</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="16"><span class="li_linenum_before_span li_linenum_before_span_hide">16</span>    };&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="17"><span class="li_linenum_before_span li_linenum_before_span_hide">17</span>    <span class="hljs-keyword">let</span> person={username:<span class="hljs-string">'kobe'</span>, age:<span class="hljs-number">39</span>, sex:<span class="hljs-string">'男'</span>};&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="18"><span class="li_linenum_before_span li_linenum_before_span_hide">18</span>    <span class="hljs-comment">//渲染组件</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="19"><span class="li_linenum_before_span li_linenum_before_span_hide">19</span>    ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Person</span> <span class="hljs-attribute">username</span>=<span class="hljs-value">{person.username}</span> <span class="hljs-attribute">age</span>=<span class="hljs-value">{person.age}</span>/&gt;</span>,document.getElementById('example1'));</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="20"><span class="li_linenum_before_span li_linenum_before_span_hide">20</span><span class="xml">   //注意这里没有传sex值，所以使用了默认设置的props值</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>以上是props传值的基本用法，但是实际使用中可能会出现使用组件的人不知道哪些值需要，哪些值可以缺省。如果不传react也不会报错，这肯定是不行的；还有就是我们组建传值肯定是希望按照规则来进行（如：年龄值需要必须为Number类型），这种情况下就需要我们对传递的值进行验证。</p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="proptypese6a380e69fa5e7b1bbe59e8b_5" class="blank_anchor_name" target="_blank"></a><a id="proptypese6a380e69fa5e7b1bbe59e8b_5" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h4>PropTypes检查类型</h4>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-keyword">import</span> PropTypes <span class="hljs-keyword">from</span> <span class="hljs-string">'prop-types'</span>;&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    <span class="hljs-comment">//设置props属性的必要性和传入的数据类型</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>    Person.propTypes = {&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>        username: PropTypes.string.isRequired, <span class="hljs-comment">//isRequired为必填参数的意思</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>        age: PropTypes.number.isRequired,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span>        sex: PropTypes.string.isRequired&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span>    };&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>以上是限定了Person组件props传参的条件（如：username必传且为字符串类型）</p>
+<p>官方文档提供了以下PropTypes验证器案例：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    MyComponent.propTypes = {&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>        <span class="hljs-comment">// 你可以将属性声明为以下 JS 原生类型</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>        optionalArray: PropTypes.array,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>        optionalBool: PropTypes.bool,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>        optionalFunc: PropTypes.func,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span>        optionalNumber: PropTypes.number,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span>        optionalObject: PropTypes.object,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="8"><span class="li_linenum_before_span li_linenum_before_span_hide">8</span>        optionalString: PropTypes.string,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="9"><span class="li_linenum_before_span li_linenum_before_span_hide">9</span>        optionalSymbol: PropTypes.symbol,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="10"><span class="li_linenum_before_span li_linenum_before_span_hide">10</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="11"><span class="li_linenum_before_span li_linenum_before_span_hide">11</span>        <span class="hljs-comment">// 任何可被渲染的元素（包括数字、字符串、子元素或数组）。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="12"><span class="li_linenum_before_span li_linenum_before_span_hide">12</span>        optionalNode: PropTypes.node,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="13"><span class="li_linenum_before_span li_linenum_before_span_hide">13</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="14"><span class="li_linenum_before_span li_linenum_before_span_hide">14</span>        <span class="hljs-comment">// 一个 React 元素</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="15"><span class="li_linenum_before_span li_linenum_before_span_hide">15</span>        optionalElement: PropTypes.element,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="16"><span class="li_linenum_before_span li_linenum_before_span_hide">16</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="17"><span class="li_linenum_before_span li_linenum_before_span_hide">17</span>        <span class="hljs-comment">// 你也可以声明属性为某个类的实例，这里使用 JS 的</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="18"><span class="li_linenum_before_span li_linenum_before_span_hide">18</span>        <span class="hljs-comment">// instanceof 操作符实现。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="19"><span class="li_linenum_before_span li_linenum_before_span_hide">19</span>        optionalMessage: PropTypes.instanceOf(Message),&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="20"><span class="li_linenum_before_span li_linenum_before_span_hide">20</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="21"><span class="li_linenum_before_span li_linenum_before_span_hide">21</span>        <span class="hljs-comment">// 你也可以限制你的属性值是某个特定值之一</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="22"><span class="li_linenum_before_span li_linenum_before_span_hide">22</span>        optionalEnum: PropTypes.oneOf([<span class="hljs-string">'News'</span>, <span class="hljs-string">'Photos'</span>]),&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="23"><span class="li_linenum_before_span li_linenum_before_span_hide">23</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="24"><span class="li_linenum_before_span li_linenum_before_span_hide">24</span>        <span class="hljs-comment">// 限制它为列举类型之一的对象</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="25"><span class="li_linenum_before_span li_linenum_before_span_hide">25</span>        optionalUnion: PropTypes.oneOfType([&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="26"><span class="li_linenum_before_span li_linenum_before_span_hide">26</span>            PropTypes.string,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="27"><span class="li_linenum_before_span li_linenum_before_span_hide">27</span>            PropTypes.number,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="28"><span class="li_linenum_before_span li_linenum_before_span_hide">28</span>            PropTypes.instanceOf(Message)&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="29"><span class="li_linenum_before_span li_linenum_before_span_hide">29</span>        ]),&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="30"><span class="li_linenum_before_span li_linenum_before_span_hide">30</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="31"><span class="li_linenum_before_span li_linenum_before_span_hide">31</span>        <span class="hljs-comment">// 一个指定元素类型的数组</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="32"><span class="li_linenum_before_span li_linenum_before_span_hide">32</span>        optionalArrayOf: PropTypes.arrayOf(PropTypes.number),&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="33"><span class="li_linenum_before_span li_linenum_before_span_hide">33</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="34"><span class="li_linenum_before_span li_linenum_before_span_hide">34</span>        <span class="hljs-comment">// 一个指定类型的对象</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="35"><span class="li_linenum_before_span li_linenum_before_span_hide">35</span>        optionalObjectOf: PropTypes.objectOf(PropTypes.number),&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="36"><span class="li_linenum_before_span li_linenum_before_span_hide">36</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="37"><span class="li_linenum_before_span li_linenum_before_span_hide">37</span>        <span class="hljs-comment">// 一个指定属性及其类型的对象</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="38"><span class="li_linenum_before_span li_linenum_before_span_hide">38</span>        optionalObjectWithShape: PropTypes.shape({&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="39"><span class="li_linenum_before_span li_linenum_before_span_hide">39</span>            color: PropTypes.string,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="40"><span class="li_linenum_before_span li_linenum_before_span_hide">40</span>            fontSize: PropTypes.number&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="41"><span class="li_linenum_before_span li_linenum_before_span_hide">41</span>        }),&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="42"><span class="li_linenum_before_span li_linenum_before_span_hide">42</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="43"><span class="li_linenum_before_span li_linenum_before_span_hide">43</span>        <span class="hljs-comment">// 你也可以在任何 PropTypes 属性后面加上 `isRequired` </span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="44"><span class="li_linenum_before_span li_linenum_before_span_hide">44</span>        <span class="hljs-comment">// 后缀，这样如果这个属性父组件没有提供时，会打印警告信息</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="45"><span class="li_linenum_before_span li_linenum_before_span_hide">45</span>        requiredFunc: PropTypes.func.isRequired,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="46"><span class="li_linenum_before_span li_linenum_before_span_hide">46</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="47"><span class="li_linenum_before_span li_linenum_before_span_hide">47</span>        <span class="hljs-comment">// 任意类型的数据</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="48"><span class="li_linenum_before_span li_linenum_before_span_hide">48</span>        requiredAny: PropTypes.any.isRequired,&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="49"><span class="li_linenum_before_span li_linenum_before_span_hide">49</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="50"><span class="li_linenum_before_span li_linenum_before_span_hide">50</span>        <span class="hljs-comment">// 你也可以指定一个自定义验证器。它应该在验证失败时返回</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="51"><span class="li_linenum_before_span li_linenum_before_span_hide">51</span>        <span class="hljs-comment">// 一个 Error 对象而不是 `console.warn` 或抛出异常。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="52"><span class="li_linenum_before_span li_linenum_before_span_hide">52</span>        <span class="hljs-comment">// 不过在 `oneOfType` 中它不起作用。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="53"><span class="li_linenum_before_span li_linenum_before_span_hide">53</span>        customProp: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(props, propName, componentName)</span> </span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="54"><span class="li_linenum_before_span li_linenum_before_span_hide">54</span>            <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/matchme/</span>.test(props[propName])) {&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="55"><span class="li_linenum_before_span li_linenum_before_span_hide">55</span>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="56"><span class="li_linenum_before_span li_linenum_before_span_hide">56</span>                    <span class="hljs-string">'Invalid prop `'</span> + propName + <span class="hljs-string">'` supplied to'</span> +&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="57"><span class="li_linenum_before_span li_linenum_before_span_hide">57</span>                    <span class="hljs-string">' `'</span> + componentName + <span class="hljs-string">'`. Validation failed.'</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="58"><span class="li_linenum_before_span li_linenum_before_span_hide">58</span>                );&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="59"><span class="li_linenum_before_span li_linenum_before_span_hide">59</span>            }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="60"><span class="li_linenum_before_span li_linenum_before_span_hide">60</span>        },&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="61"><span class="li_linenum_before_span li_linenum_before_span_hide">61</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="62"><span class="li_linenum_before_span li_linenum_before_span_hide">62</span>        <span class="hljs-comment">// 不过你可以提供一个自定义的 `arrayOf` 或 `objectOf` </span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="63"><span class="li_linenum_before_span li_linenum_before_span_hide">63</span>        <span class="hljs-comment">// 验证器，它应该在验证失败时返回一个 Error 对象。 它被用</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="64"><span class="li_linenum_before_span li_linenum_before_span_hide">64</span>        <span class="hljs-comment">// 于验证数组或对象的每个值。验证器前两个参数的第一个是数组</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="65"><span class="li_linenum_before_span li_linenum_before_span_hide">65</span>        <span class="hljs-comment">// 或对象本身，第二个是它们对应的键。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="66"><span class="li_linenum_before_span li_linenum_before_span_hide">66</span>        customArrayProp: PropTypes.arrayOf(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(propValue, key, componentName, location, propFullName)</span> </span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="67"><span class="li_linenum_before_span li_linenum_before_span_hide">67</span>            <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/matchme/</span>.test(propValue[key])) {&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="68"><span class="li_linenum_before_span li_linenum_before_span_hide">68</span>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="69"><span class="li_linenum_before_span li_linenum_before_span_hide">69</span>                    <span class="hljs-string">'Invalid prop `'</span> + propFullName + <span class="hljs-string">'` supplied to'</span> +&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="70"><span class="li_linenum_before_span li_linenum_before_span_hide">70</span>                    <span class="hljs-string">' `'</span> + componentName + <span class="hljs-string">'`. Validation failed.'</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="71"><span class="li_linenum_before_span li_linenum_before_span_hide">71</span>                );&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="72"><span class="li_linenum_before_span li_linenum_before_span_hide">72</span>            }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="73"><span class="li_linenum_before_span li_linenum_before_span_hide">73</span>        })&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="74"><span class="li_linenum_before_span li_linenum_before_span_hide">74</span>    };&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e7bb84e4bbb6e5b58ce5a597_6" class="blank_anchor_name" target="_blank"></a><a id="e7bb84e4bbb6e5b58ce5a597_6" class="blank_anchor_id" target="_blank"></a>
+</div>
+<h4>组件嵌套</h4>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span>    <span class="hljs-comment">//定义App组件（ES6类语法创建）</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>        render() {&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>            <span class="hljs-keyword">let</span> {arr} = <span class="hljs-keyword">this</span>.props;<span class="hljs-comment">//对象解构赋值</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>            <span class="hljs-keyword">return</span> (&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span>                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span><span class="xml">                    {</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="8"><span class="li_linenum_before_span li_linenum_before_span_hide">8</span><span class="xml">                        arr.map((item, index) =&gt; {</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="9"><span class="li_linenum_before_span li_linenum_before_span_hide">9</span><span class="xml">                            return <span class="hljs-tag">&lt;<span class="hljs-title">Welcome</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">{item}</span>/&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="10"><span class="li_linenum_before_span li_linenum_before_span_hide">10</span><span class="xml">                        })</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="11"><span class="li_linenum_before_span li_linenum_before_span_hide">11</span><span class="xml">                    }</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="12"><span class="li_linenum_before_span li_linenum_before_span_hide">12</span><span class="xml">                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="13"><span class="li_linenum_before_span li_linenum_before_span_hide">13</span><span class="xml">            )</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="14"><span class="li_linenum_before_span li_linenum_before_span_hide">14</span>        }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="15"><span class="li_linenum_before_span li_linenum_before_span_hide">15</span>    }&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="16"><span class="li_linenum_before_span li_linenum_before_span_hide">16</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="17"><span class="li_linenum_before_span li_linenum_before_span_hide">17</span>    <span class="hljs-comment">//定义Welcome组件（工厂函数创建）</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="18"><span class="li_linenum_before_span li_linenum_before_span_hide">18</span>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Welcome</span><span class="hljs-params">(props)</span> </span>{<span class="hljs-comment">//工厂函数定义的组件用形参props传递参数</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="19"><span class="li_linenum_before_span li_linenum_before_span_hide">19</span>        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Welcome {props.name}<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="20"><span class="li_linenum_before_span li_linenum_before_span_hide">20</span><span class="hljs-keyword"></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="21"><span class="li_linenum_before_span li_linenum_before_span_hide">21</span><span class="hljs-keyword">    }</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="22"><span class="li_linenum_before_span li_linenum_before_span_hide">22</span><span class="hljs-keyword"></span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="23"><span class="li_linenum_before_span li_linenum_before_span_hide">23</span><span class="hljs-keyword">    let arr = ['kobe', 'wade', 'anverson', 'duncan'];</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="24"><span class="li_linenum_before_span li_linenum_before_span_hide">24</span><span class="hljs-keyword">    //渲染组件</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="25"><span class="li_linenum_before_span li_linenum_before_span_hide">25</span><span class="hljs-keyword">    ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">App</span> <span class="hljs-attribute">arr</span>=<span class="hljs-value">{arr}</span>/&gt;</span>, document.getElementById('example'))</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+</div>
+
+</div></div>
+</body></html>
+

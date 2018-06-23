@@ -1,0 +1,1151 @@
+<!DOCTYPE html><html lang="en"><head>
+<title> Three.js学习(一)之初识three.js</title>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="()">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style type="text/css">
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+
+h1.story_title {
+    margin: 0.7em 0;
+}
+.story_tags {
+    margin: 0 0 1.2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0;
+    margin: 1.0em 0 .6em 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 40px;
+}
+
+h1 {
+  font-size: 38.5px;
+}
+
+h2 {
+  font-size: 31.5px;
+}
+
+h3 {
+  font-size: 24.5px;
+}
+
+h4 {
+  font-size: 17.5px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11.9px;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 35px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt,
+dd {
+  line-height: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #dddddd;
+}
+
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 20px;
+}
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+    border: 1px solid rgba(34,36,38,.15);
+}
+.tag.label{
+display: inline-block;
+vertical-align: baseline;
+line-height: 1;
+margin: 0.125em 0.125em;
+background-color: #ebeeef;
+border-color: #ebeeef;
+background-image: none;
+padding: 0.6em 0.8em;
+color: #5e6060;
+text-transform: none;
+font-weight: bold;
+border-radius: 0.2857rem;
+box-sizing: border-box;
+font-size: 12px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #ffffff;
+}
+
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+tr { page-break-inside: avoid; }
+
+.story_image_container{
+   page-break-inside: avoid;
+}
+
+.xsj_underline{
+    page-break-after: always;
+    visibility: hidden;
+}
+
+.table-celled.table tr td,.table-celled.table tr th {
+    border-left: 1px solid rgba(34,36,38,.1)
+}
+
+.table-celled.table tr td:first-child,.table-celled.table tr th:first-child {
+    border-left: none
+}
+
+.toc ul {
+    list-style: none;
+}
+p {
+    line-height: 1.6;
+}
+body>p {
+  margin-bottom: 1.8em;
+}
+body>p>img.center,
+body>p>a>img.center {
+  display: block;
+  margin: 0 auto;
+  background-color: rgba(128,128,128,0.3);
+}
+body {
+    font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'Hiragino Sans GB', STHeiti, "Microsoft YaHei", "微软雅黑", 'WenQuanYi Micro Hei', STXihei, "华文细黑", Heiti, "黑体", SimSun, "宋体", Song, sans-serif;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 100;
+//  line-height: 1.8em;
+  color: #2f2f2f;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+em.cjk_emphasis{
+    font-style: normal;
+    font-family: Georgia,"Times New Roman",Times,"楷体","AR PL UKai CN", "NSimSun","Songti SC","SimSun",serif!important;
+}
+body dt,
+body dd {
+  line-height: 1.35em;
+}
+body code, body .xiaoshujiang_code {
+//  background-color: #D6DBDF;
+    border: 0;
+  border-radius: 4px;
+//  color: #2C3E50;
+  font-size: 90%;
+//  padding: 2px 4px;
+}
+code {
+    background-color: rgba(214, 219, 223, 0.28);
+    border-radius: 4px;
+    color: #2C3E50;
+    padding: 2px 4px;
+}
+.xiaoshujiang_code ol{
+    margin-bottom: 0px;
+}
+body h1 {
+  line-height: 1.6;
+}
+body h2 {
+  line-height: 1.1;
+}
+body h3 {
+  line-height: 1.1;
+}
+
+.hljs, .hljs * {
+  overflow: visible !important;
+} 
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ * Copyright (c) 2014-2015, Asciidocfx Team, (MIT Licensed)
+ * https://github.com/asciidocfx/highlight-treeview.js
+ */
+.language-treeview.hljs{
+  position: relative;
+}
+.hljs-folder,
+.hljs-hiddenfile,
+.hljs-file {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    height: 16px;
+}
+.hljs-folder:before,
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    top: 0;
+    content: '';
+    width: 14px;
+    height: 12px;
+    margin-top: 0px;
+    margin-right: 3px;
+    position: relative;
+    display: inline-block;
+    background-size: 14px;
+    background-repeat: no-repeat;
+}
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    height: 14px;
+    margin-left: 1px;
+}
+.hljs-hiddenfile {
+    opacity: 0.6;
+}
+.hljs-file.photo:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c5";
+}
+.hljs-file.plain:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f016";
+}
+.hljs-file.source:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c9";
+}
+.hljs-file.archive:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c6";
+}
+.hljs-file.audio:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c7";
+}
+.hljs-file.video:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c8";
+}
+.hljs-file.pdf:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c1";
+}
+.hljs-file.xls:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c3";
+}
+.hljs-file.doc:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c2";
+}
+.hljs-file.ppt:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c4";
+}
+.hljs-folder:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f114";
+}
+.hljs-hiddenfile:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f016";
+}
+.hljs-tvline {
+    margin-left: 6px;
+    position: absolute;
+    text-indent: -99em;
+    padding-bottom: 8px;
+    vertical-align: top;
+    display: inline-block;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch {
+    width: 8px;
+    height: 8px;
+    margin-top: -1px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch.win {
+    width: 14px;
+    margin-right: 2px;
+}
+.hljs-folder-last-branch {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-last-branch.win {
+    width: 13px;
+    margin-right: 2px;
+}
+
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ */
+
+
+.mark{
+    border: 0;
+  background-color: rgba(221, 243, 231, 0.4);
+  border-radius: 4px;
+  color: #29754d;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+.line_mark{
+    border: 1px dashed #3A4C42;
+    margin-top: 2px;
+}
+code .mark, .xiaoshujiang_code .mark{
+    border-radius: 0px;
+    font-size: initial;
+    padding: initial;
+}
+a.attachment{
+    background-color: #ecf0f3;
+    border: 1px solid #bec6cb;
+    display: inline-block;
+    padding: 5px;
+    margin: 2px;
+    min-width: 250px;
+}
+a.attachment i.fa{
+    font-size: 3em;
+  float: left;
+  margin-right: 0.2em;
+}
+a.attachment .filename{
+    vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+}
+a.attachment .filesize{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  opacity: .6;
+  font-size: 80%;
+  white-space: nowrap;
+}
+.checkbox .checked{
+    text-decoration: line-through;
+}
+.flow-chart, .sequence-diagram{
+    text-align: center;
+}
+.plot, .plot-image{
+    text-align: center;
+    min-height: 200px;
+    min-width: 200px;
+}
+
+pre, .xiaoshujiang_pre {
+    line-height: initial !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    tab-size: 4;
+    white-space: pre-wrap;
+}
+.xiaoshujiang_code_container pre{
+    margin: 0px;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk{
+    box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+    margin: 1em 0;
+    padding: 1em;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk_hide_code{
+    box-shadow: initial;
+    padding: initial;
+    padding-bottom: 2em;
+}
+.xiaoshujiang_code_container .out_put{
+    box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+    margin: 1em 0;
+    background-color: #FCFFF5;
+    color: #2C662D;
+    padding: 1em;
+}
+.xiaoshujiang_code_container .out_put_error{
+    background-color: #FFF6F6;
+    color: #9F3A38;
+    margin: 1em 0;
+    box-shadow: 0 0 0 1px #E0B4B4 inset,0 0 0 0 transparent;
+    padding: 1em;
+}
+
+.xiaoshujiang_pre {
+    font-family: monospace;
+}
+
+.story_align_left, .story_align_left .story_image_container {
+    text-align: left;
+}
+.story_align_right, .story_align_right .story_image_container {
+    text-align: right;
+}
+.story_align_center, .story_align_center .story_image_container {
+    text-align: center;
+}
+.story_align_justify, .story_align_justify .story_image_container {
+    text-align: justify;
+}
+
+
+/** 
+ * code line nums
+ */
+code.hljs.code_linenums, .xiaoshujiang_code.hljs.code_linenums{
+    position: relative;
+}
+.ol_linenums{
+    padding: 0px;
+    margin-left: 2em;
+    border-left: 1px solid #e0e0e0;
+}
+.li_linenum{
+    position:relative;
+    margin-left: 0.5em;
+    list-style: none;
+    counter-increment: lines 1;
+}
+.li_linenum.li_list_style{
+    list-style: inherit;
+    margin-left: 5px;
+}
+.li_linenum:before, .li_linenum_before_span{
+    content: counter(lines, decimal);
+  position: absolute;
+  left: -3em;
+  text-align: center;
+  width: 2.5em;
+  vertical-align: top;
+}
+.li_linenum_before_span_hide{
+    display: none;
+}
+.xiaoshujiang_code .code_line_break_hack{
+    margin:0;
+    border:0;
+    border-top:0;
+    border-bottom:0;
+}
+/** 
+ * code line nums
+ */
+.mathjax-container{
+    text-align: center;
+}
+div.mathjax{
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+text{
+    font-size: 14px;
+}
+
+/**
+ * block image
+ */
+
+.story_image_container{
+    text-align: center;
+}
+.story_image_container>.story_image{
+    display: inline-block;
+  position: relative;
+    max-width: 80%;
+}
+.story_image_caption{
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 10px;
+}
+.story_image_blank_caption{
+    border-bottom: 0px;
+}
+/**
+.story_image:before, .story_image:after{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    bottom: 13px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    border-radius: 10px/90px;
+    box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+.story_image:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+**/
+.story_image>img{
+    border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+}
+.story_inline_image>img{
+    max-width: 50%;
+    vertical-align: bottom;
+}
+.story_remote_resource_block{
+    text-align: center;
+}
+.xiaoshujiang_code_container {
+    margin: 1em 0px;
+    position: relative;
+    padding-bottom: 2em;
+}
+
+
+.xiaoshujiang_code_title_container{
+    font-size: 70%;
+    opacity: 0.5;
+}
+.xiaoshujiang_code_title_container>.xiaoshujiang_code_infos{
+    float: right;
+}
+
+
+.task-list-item{
+    list-style: none;
+}
+.task-list-item.li_list_style{
+    list-style:inherit;
+}
+.task-list-item>input{
+    margin: 0 0 0 -20px;
+}
+.video_container{
+    width: 100%;
+    display: table;
+    text-align: center;
+    position: relative;
+    padding-bottom: 56.25%!important;
+}
+.slideshare_container .inner{
+    position: relative;
+    width: 100%;
+}
+.slideshare_container .inner iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.video_container iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+kbd{
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.blank_anchor_id {
+    float: right;
+    width: 1px
+}
+.blank_anchor_id {
+    visibility: hidden;
+}
+.blank_anchor_id:before {
+    content: 'a';
+}
+
+blockquote footer{
+    margin: 1em 0;
+    font-style: italic;
+}
+
+blockquote footer cite {
+    margin: 0 1em;
+}
+/*wavedrom start*/
+
+.wavedrom_svg text, .wavedrom_svg_defs text {
+    font-size:11pt;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    font-stretch:normal;
+    text-align:center;
+    fill-opacity:1;
+    font-family:Helvetica
+}
+.wavedrom_svg .muted, .wavedrom_svg_defs .muted {
+    fill:#aaa
+}
+.wavedrom_svg .warning, .wavedrom_svg_defs .warning {
+    fill:#f6b900
+}
+.wavedrom_svg .error, .wavedrom_svg_defs .error {
+    fill:#f60000
+}
+.wavedrom_svg .info, .wavedrom_svg_defs .info {
+    fill:#0041c4
+}
+.wavedrom_svg .success, .wavedrom_svg_defs .success {
+    fill:#00ab00
+}
+.wavedrom_svg .h1, .wavedrom_svg_defs .h1 {
+    font-size:33pt;
+    font-weight:bold
+}
+.wavedrom_svg .h2, .wavedrom_svg_defs .h2 {
+    font-size:27pt;
+    font-weight:bold
+}
+.wavedrom_svg .h3, .wavedrom_svg_defs .h3 {
+    font-size:20pt;
+    font-weight:bold
+}
+.wavedrom_svg .h4, .wavedrom_svg_defs .h4 {
+    font-size:14pt;
+    font-weight:bold
+}
+.wavedrom_svg .h5, .wavedrom_svg_defs .h5 {
+    font-size:11pt;
+    font-weight:bold
+}
+.wavedrom_svg .h6, .wavedrom_svg_defs .h6 {
+    font-size:8pt;
+    font-weight:bold
+}
+.wavedrom_svg_defs .s1 {
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none
+}
+.wavedrom_svg_defs .s2 {
+    fill:none;
+    stroke:#000;
+    stroke-width:0.5;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none
+}
+.wavedrom_svg_defs .s3 {
+    color:#000;
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:1,3;
+    stroke-dashoffset:0;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s4 {
+    color:#000;
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none;
+    stroke-dashoffset:0;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible
+}
+.wavedrom_svg_defs .s5 {
+    fill:#fff;
+    stroke:none
+}
+.wavedrom_svg_defs .s6 {
+    color:#000;
+    fill:#ffffb4;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s7 {
+    color:#000;
+    fill:#ffe0b9;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s8 {
+    color:#000;
+    fill:#b9e0ff;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s9 {
+    fill:#000;
+    fill-opacity:1;
+    stroke:none
+}
+.wavedrom_svg_defs .s10 {
+    color:#000;
+    fill:#fff;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s11 {
+    fill:#0041c4;
+    fill-opacity:1;
+    stroke:none
+}
+.wavedrom_svg_defs .s12 {
+    fill:none;
+    stroke:#0041c4;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none
+}
+
+
+/*wavedrom stop*/
+
+.mermaid_svg{
+font-family: monospace;
+}
+
+@media print{
+  body{
+    word-wrap: break-word;
+    word-break: break-word;
+    background: initial;
+  }
+  .xiaoshujiang_element.xsj_anchor{
+    position: absolute;
+  }
+}
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.hljs-formula {
+  background: #eee8d5;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs{background: #f5f5f5;border: 1px solid #ccc;color:#2f2f2f;}
+h1.story_title {font-size:28px;}
+
+</style>
+</head><body>
+<div><div class="preview" id="wmd-preview">
+
+	<div class="preview html_preview"><h1 class="story_title">Three.js学习(一)之初识three.js</h1><div class="story_tags"><span class="tag blue label">three.js</span>&nbsp;</div><div class="xiaoshujiang_element xsj_anchor">
+  <a name="threejse7ae80e4bb8b_1" class="blank_anchor_name"></a><a id="threejse7ae80e4bb8b_1" class="blank_anchor_id"></a><a name="threejs简介" class="blank_anchor_name"></a><a id="threejs简介" class="blank_anchor_id"></a>
+</div>
+<h3>Three.js简介</h3>
+<p>什么是threejs，很简单，你将它理解成three + js就可以了。three表示3D的意思，js表示javascript的意思。那么合起来，three.js就是使用javascript 来写3D程序的意思。</p>
+<p>Javascript是运行在网页端的脚本语言，那么毫无疑问Three.js也是运行在浏览器上的。它能写出在浏览器上流畅运行的3D程序。<br>
+<a href="https://github.com/mrdoob/three.js" target="_blank">源码下载</a></p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e4b880e38081e4b889e5a4a7e7bb84e4bbb6_2" class="blank_anchor_name"></a><a id="e4b880e38081e4b889e5a4a7e7bb84e4bbb6_2" class="blank_anchor_id"></a><a name="一-三大组件" class="blank_anchor_name"></a><a id="一-三大组件" class="blank_anchor_id"></a>
+</div>
+<h4>一、三大组件</h4>
+<p>在Three.js中，要渲染物体到网页中，我们需要三大组件：场景（scene）、相机（canera）和渲染器（renderer）。<span style="color:#ff0000">有了这三样东西，才能将物体渲染到网页中去</span>。</p>
+<p>创建这三大组件的代码如下：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-keyword">var</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();  <span class="hljs-comment">// 场景</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span><span class="hljs-keyword">var</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(<span class="hljs-number">75</span>, <span class="hljs-built_in">window</span>.innerWidth/<span class="hljs-built_in">window</span>.innerHeight, <span class="hljs-number">0.1</span>, <span class="hljs-number">1000</span>);<span class="hljs-comment">// 透视相机</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-keyword">var</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer();   <span class="hljs-comment">// 渲染器</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth, <span class="hljs-built_in">window</span>.innerHeight);    <span class="hljs-comment">// 设置渲染器的大小为窗口的内宽度，也就是内容区的宽度</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span><span class="hljs-built_in">document</span>.body.appendChild(renderer.domElement);&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>在Threejs中场景就只有一种，用THREE.Scene来表示，要构件一个场景也很简单，只要new一个对象就可以了，代码如下：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-keyword">var</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>场景是所有物体的容器，如果要显示一个苹果，就需要将苹果对象加入场景中。</p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e4ba8ce38081e79bb8e69cba_3" class="blank_anchor_name"></a><a id="e4ba8ce38081e79bb8e69cba_3" class="blank_anchor_id"></a><a name="二-相机" class="blank_anchor_name"></a><a id="二-相机" class="blank_anchor_id"></a>
+</div>
+<h4>二、相机</h4>
+<p>另一个组建是相机，相机决定了场景中那个角度的景色会显示出来。相机就像人的眼睛一样，人站在不同位置，抬头或者低头都能够看到不同的景色。</p>
+<p>场景只有一种，但是相机却又很多种。和现实中一样，不同的相机确定了呈相的各个方面。比如有的相机适合人像，有的相机适合风景，专业的摄影师根据实际用途不一样，选择不同的相机。对程序员来说，只要设置不同的相机参数，就能够让相机产生不一样的效果。</p>
+<p>在Threejs中有多种相机，这里先介绍一种，它是：<br>
+<strong>透视相机</strong>（THREE.PerspectiveCamera）、这里我们使用一个透视相机，透视相机的参数很多，这里先不详细讲解。后面关于相机的那一章，我们会花大力气来讲。定义一个相机的代码如下所示：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span> <span class="hljs-keyword">var</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera(<span class="hljs-number">75</span>, <span class="hljs-built_in">window</span>.innerWidth/<span class="hljs-built_in">window</span>.innerHeight, <span class="hljs-number">0.1</span>, <span class="hljs-number">1000</span>);&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e4b889e38081e6b8b2e69f93e599a8_4" class="blank_anchor_name"></a><a id="e4b889e38081e6b8b2e69f93e599a8_4" class="blank_anchor_id"></a><a name="三-渲染器" class="blank_anchor_name"></a><a id="三-渲染器" class="blank_anchor_id"></a>
+</div>
+<h4>三、渲染器</h4>
+<p>最后一步就是设置渲染器，渲染器决定了渲染的结果应该画在页面的什么元素上面，并且以怎样的方式来绘制。这里我们定义了一个WebRenderer渲染器，代码如下所示：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-keyword">var</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer();<span class="hljs-comment">// 渲染器</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>renderer.setSize(<span class="hljs-built_in">window</span>.innerWidth, <span class="hljs-built_in">window</span>.innerHeight);<span class="hljs-comment">// 设置渲染器的大小为窗口的内宽度，也就是内容区的宽度</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-built_in">document</span>.body.appendChild(renderer.domElement);<span class="hljs-comment">// 将画布挂到body下</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p>注意，渲染器renderer的domElement元素，表示渲染器中的画布，所有的渲染都是画在domElement上的，所以这里的appendChild表示将这个domElement挂接在body下面，这样渲染的结果就能够在页面中显示了。</p>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e59b9be38081e6b7bbe58aa0e789a9e4bd93e588b0e59cbae699afe4b8ad_5" class="blank_anchor_name"></a><a id="e59b9be38081e6b7bbe58aa0e789a9e4bd93e588b0e59cbae699afe4b8ad_5" class="blank_anchor_id"></a><a name="四-添加物体到场景中" class="blank_anchor_name"></a><a id="四-添加物体到场景中" class="blank_anchor_id"></a>
+</div>
+<h4>四、添加物体到场景中</h4>
+<p>那现在，将一个物体添加到场景中：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-keyword">var</span> geometry = <span class="hljs-keyword">new</span> THREE.CubeGeometry(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>); &nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span><span class="hljs-keyword">var</span> material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial({<span class="hljs-attr">color</span>: <span class="hljs-number">0x00ff00</span>});&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-keyword">var</span> cube = <span class="hljs-keyword">new</span> THREE.Mesh(geometry, material); &nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>scene.add(cube);&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<p><strong>CubeGeometry</strong>：长方体或者正方体</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-comment">/*</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span><span class="hljs-comment">* width：立方体x轴的长度</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-comment">* height：立方体y轴的长度</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span><span class="hljs-comment">* depth：立方体z轴的深度</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span><span class="hljs-comment">* 简单来说，这三个参数就是一个长方体的长宽高</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span><span class="hljs-comment">* */</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span>CubeGeometry(width, height, depth, segmentsWidth, segmentsHeight, segmentsDepth, materials, sides)&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e4ba94e38081e6b8b2e69f93_6" class="blank_anchor_name"></a><a id="e4ba94e38081e6b8b2e69f93_6" class="blank_anchor_id"></a><a name="五-渲染" class="blank_anchor_name"></a><a id="五-渲染" class="blank_anchor_id"></a>
+</div>
+<h4>五、渲染</h4>
+<p>渲染应该使用渲染器，结合相机和场景来得到结果画面。实现这个功能的函数是：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-comment">/*</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span><span class="hljs-comment">* scene：前面定义的场景</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span><span class="hljs-comment">* camera：前面定义的相机</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span><span class="hljs-comment">* renderTarget：渲染的目标，默认是渲染到前面定义的render变量中</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span><span class="hljs-comment">* forceClear：每次绘制之前都将画布的内容给清除，即使自动清除标志autoClear为false，也会清除。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span><span class="hljs-comment">* */</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="7"><span class="li_linenum_before_span li_linenum_before_span_hide">7</span>render( scene, camera, renderTarget, forceClear )&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e585ade38081e6b8b2e69f93e5beaae78eaf_7" class="blank_anchor_name"></a><a id="e585ade38081e6b8b2e69f93e5beaae78eaf_7" class="blank_anchor_id"></a><a name="六-渲染循环" class="blank_anchor_name"></a><a id="六-渲染循环" class="blank_anchor_id"></a>
+</div>
+<h4>六、渲染循环</h4>
+<p>渲染有两种方式：实时渲染和离线渲染 。</p>
+<p><strong>离线渲染</strong>：这种方式需要事先渲染好一帧一帧的图片，然后再把图片顺序链接起来形成动画。CPU和GPU根本没有能力在播放的时候渲染出这种高质量的图片。<br>
+<strong>实时渲染</strong>：就是需要不停的对画面进行渲染，即使画面中什么也没有改变，也需要重新渲染。下面就是一个渲染循环：</p>
+<div class="xiaoshujiang_code_container"><div class="xiaoshujiang_pre"><div class="language-javascript hljs code_linenums xiaoshujiang_code"><ol start="1" class="ol_linenums" style="counter-reset: lines 0;"><li class="li_linenum " date-linenum="1"><span class="li_linenum_before_span li_linenum_before_span_hide">1</span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">render</span>(<span class="hljs-params"></span>) </span>{&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="2"><span class="li_linenum_before_span li_linenum_before_span_hide">2</span>    cube.rotation.x += <span class="hljs-number">0.001</span>;&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="3"><span class="li_linenum_before_span li_linenum_before_span_hide">3</span>    cube.rotation.y += <span class="hljs-number">0.001</span>;&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="4"><span class="li_linenum_before_span li_linenum_before_span_hide">4</span>    renderer.render(scene, camera);&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="5"><span class="li_linenum_before_span li_linenum_before_span_hide">5</span>    requestAnimationFrame(render);<span class="hljs-comment">// 这个方法就是让浏览器重新执行一次requestAnimationFrame中的方法(及自己调用自己)，已形成循环调用，达到不停对画面进行渲染的效果。</span>&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li><li class="li_linenum " date-linenum="6"><span class="li_linenum_before_span li_linenum_before_span_hide">6</span>}&nbsp;<hr class="code_line_break_hack" style="margin:0;border:0;border-top:0;border-bottom:0;"></li></ol></div></div></div>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e59cbae699afefbc8ce79bb8e69cbaefbc8ce6b8b2e69f93e599a8e4b98be997b4e79a84e585b3e7b3bb_8" class="blank_anchor_name"></a><a id="e59cbae699afefbc8ce79bb8e69cbaefbc8ce6b8b2e69f93e599a8e4b98be997b4e79a84e585b3e7b3bb_8" class="blank_anchor_id"></a><a name="场景相机渲染器之间的关系" class="blank_anchor_name"></a><a id="场景相机渲染器之间的关系" class="blank_anchor_id"></a>
+</div>
+<h3>场景，相机，渲染器之间的关系</h3>
+<p>Three.js中的场景是一个物体的容器，开发者可以将需要的角色放入场景中，例如苹果，葡萄。同时，角色自身也管理着其在场景中的位置。</p>
+<p>相机的作用就是面对场景，在场景中取一个合适的景，把它拍下来。</p>
+<p>渲染器的作用就是将相机拍摄下来的图片，放到浏览器中去显示。他们三者的关系如下图所示：</p>
+<p></p><div class="story_image_container story_block_image"><div class="story_image"><img src="data:image/jpeg;base64,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iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoorF8Ra9HotnlcNcycRr/U1UYuT5UTKSirsb4g8SQaLFsXEl0w+WPPT3NeZ32oXOpXDT3Updz+Q+lRXE8t1O80zl5HOWY96jr2aGHjSV+p5FfESqvyCiiiuk5wooooAKKKKACiiigAooooA1NH1270afdC26In5o26GvTtK1a21e0E9u3P8SHqp9DXjtXtK1W40i9W4gb2ZD0YehrjxOFVRc0dzrw+JdN8stj2Os+b/AI+ZfqP5CpNM1GDVLGO6gPysOR3U+lRzf8fMv1H8hXkNNOzPVTTV0NooopDCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACk/5aR/74paT/AJaR/wC+KANOiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigCC8u47G0luZjhI1ya8i1TUptVv5LqY8sflH90dhXUeO9V3SR6dE3C/PJj17CuKr1cFR5Y873Z5mMq3lyLZBRRRXecIUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBveFtbbStRVHY/Zpjtceh9a9CkYNPIykEEggj6CvH69I8N3L3OiQyStlxlSSeuOK8zHUkrVEelgqrd4M16KMj1oyPWvOO8KKMj1oyPWgAooyPWjI9aACijI9aKACiiigAooooAKKKKACiiigAooooAKKKKACk/5aR/74paa52lCOcOP50AalFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFRzyrBBJK/3UUsakrC8XXX2bw9PjrJhPzqoR5pKPcmUuWLZ5nf3TXt/PcucmRyfwqvRRX0KSSsjwW23dhRRRTEFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFb+gaqyT21ixEcRYgv9awKdFIYpUkXqrBh+FZVaaqR5WaUqjpy5kesDRGx/wAfsnP+yKX+xW/5+36Y+6Ku2E4u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otV8U22l67bWs1xFHatCZJXKM55+6F2/ifpWLDdTL8P7uEWFw0e2YeeGj2D527Ft36Vsabt0fUIFnBkbVFBFyTjayqNseMdMZwc8mo9nFPba/wAy3OT+f4Gxp2r2Oq2z3FlcCSFGKsxUrg4z3A7GqWm62bmGW6umhjt5JXFmqAmSVFzk45LE4zgCqVtb213Y+IYrq4e2gkvXEkquFKgBe545x+tZvhmLTXvWnXU3nYbodPiuJhLJGoHL7f4c7eOBwPepVONpP+v6/QpzldLzf9f11Ne418Lr1lEn2wWzxSGSM2UmWYYwQCm7uenHrW3a3kV2rNEJRtOCJYXjP5MAa8/k1SB72O6fxrmeFWRG/so8A4yMYx2Fdnpt4F0OG6mvZL8MCfPjtWBcE8fIoJ46dO1FWnyxVv1/yFTqOUmv8uy8zCj8UXMmkTXranpEU6CQi0aM7ztJAH+sB5x6d6mPiOdYrJ01TSbiS4liRoIozvUMQD/y0PTPpWddXH9k+HbjTxf/ALuRJRGs2lTozlssQGJA79ccVYhujqdhZxPfFo7WSJ2WHSZywZMHaWyR+lackd7aX7f8Ahye19df63O0opkUqzRLIocKwyA6FT+IIBH40+uM6wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAr3ljbahEsV1EJI1cOFJIGRyM46/Q8VgW1rcJo3iNGglDy3FwY12HLgrwQO+faunoqlNpWJcU2mc/F/bC+HUg/s+14tAmDcuH+5j7vl9fbNP0rTI30HTHurY/arW3wgcEMjFcHj1rdoqpVLp20uKMLW62/4H+Rx1lZX9zouh6S9pNFCMTXUkg24CNkJjrknH+c4va7Ld2GtWuoQWFxdqtvJEBAm8hyQRkdccda6Oim6t5Xt3/ElUrRtft+BzXiCa+l8OR2klhPNe3aKH+zR7kjfKk5OeB789KtajBeSa/pr2u1NkMwaWSFpEXO3g4I5OPWtuikqltl3/Efs77vt+Bz13bakdc0eS4kinijlkLGC2ZNmUIyxLtx+VPu3luPE1viyu1hs4pTJNs+VtyjGwg5J46Dmt6ij2g+Q4eKyuopJL6azu5LCZHt4rKYPLOsbAdDztyR0Y8DvV/w/HqFlqGzVrWdrmWFY4p0G+NI1GdrEdGyTk9CeldTUNrcC6g8wKVIZkZT1BBII/MVTqtpqxCpJPc4i30/xPJ4YmsobeyW3k8wCOYOk5BY+uF+me1dReTJYabaPPps960RTCQRCVo2A+8Bn9RWrRSlV5nqio07dTn9MgvE0S+ll04STXc8k4tJ3C5ViMK3BA47GpNNttatbjy5INHttPBY+XaI+72HYfjj8K3KKlzvfTcahtqc1oC6xbeHreEafbgKG4muHjf7x6r5Zx+dT6Ol/aeELZILUG9WPAinJTB3HrxnjrjvW9RTlUvfTd3EoWtrsrHMXWi3X9mahe38pvdSe2kSNIk+SIEH5Y16n0z1P85v7HvY4re+0udba9MEazQzKTFNgAfMByCPUc9q6Gij2sg9lEgszdGziN6sS3O394IiSufbPNT0UVDd2WlZBRRRSGFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVRg/wBH1W4h/hnUTp9RhW/9lP4mr1UdS/dLBeD/AJd5AW/3D8rflnP/AAGqjvbuTLuXqKKKkoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACmSxpNC8UgyjqVYeoNPooAqaZI72KJIcyxExSH1ZTjP49fxq3VGP/AEfWJU/guU8wf764Vv02fkavVUt7kx2sFFFFSUFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAFHVP3cCXY62riU/7vRv8Ax0k/gKvdaRlV0KsAVYYIPcVT0tmFn5DkmS2YwsT1O3ofxXafxqt4+hO0vUu0UUVJQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFUf+PfWf8AYuo8/wDA0/xU/wDjtXqpaopFp9oQEvbMJhjqQPvD8VLD8aqO9u5Mtrl2ikVg6hlIKkZBHelqSgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKCARgjINFFAFHSyUt3tWPzWrmL/gPVf8Ax0rV6qL/AOj6xG/8F1H5Z/31yR+YLf8AfIq9VS3v3JjtbsFFFFSUFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAFPU42exaSMZlhImQDuV5x+IyPxq1HIssSSIco6hlPqDTqo6Z+6SazP/AC7yFV/3D8y/kDj/AIDVbx9CdpF6iiipKCiiigAooooAKKKKACiiigAooooA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yX7KVMsm0gZYdvYV9KWKWdpaxW1qUWGNQqKD0FNrsCLo5paaGB6EUuagoWiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooACQASTgDvXnnizxO13I1hZORApxI4/jPp9K1fGevGzh/s+2bE0gy7D+Fa88r0cHh7/vJfI4MXiLfu4/MKKKK9M80KKKKACiiigAooooAKKKKACiiigCSGaS3mSaFykiHKsDyK9O8NeIo9Yt/KlIW7QfMv973FeW1Ysryawu47mBisiHP19q5sRQVWPmdFCu6UvI9poqjpOpRarp8d1HxuGGX0PcVerxWmnZnsJpq6CiiikMK4fx5qhHlabG3+3J/Su3dgiMzHAAya8d1i8a/1W4uGP3nIH0FdeDp81S76HLjKnLTsupRooor2TyAooooAKKKKACiiigAooooAKKKKACiiigAooooA6zwPqn2bUGsnb93Nyv8AvV6LXidrcNa3UU6Eho2DcV7NaTi5tIplIw6g8V5GOp8s+ZdT1cFU5ocr6E1IaWiuI7ChqVgl/YXFucAzRlCT7184+ItPg0O4OmahA0ZhJEcnlllK19O4qrdadZ30ZS6toplPaRAaadhNHx9fi2uFaBJVhUnkspBYe1LpVhC90lskkkkbH5irYwK+jNT+EPhnUZTII5YCeyHiqtr8H9Lsf+Pa6dR7pn+tWmr6ktPocHoen22lIRaqQW+85OSa6e1u5UIw7fnXTx/DuGLGL0/9+/8A69Wo/BMaf8vef+Af/Xrb2sTD2UjOtNWnRRmRj+Na9vrjkfM2acvhNFGPtP8A45/9epk8Mon/AC3/APHahygzRRmjcjbdGreoBp1NRdkapnO0AU6sDYKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKrX94lhYzXMn3Y1JqzXFePtR2xQWCN9473+natKVP2k1Ezqz5IORxV5dyX15LcynLyNk1BRRXvpJKyPDbbd2FFFFMQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB03gzVjY6l9lkbEM/HPZu1el14ejMjq6nDKcg+9ewaLfDUNJguAeS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" alt="enter description here" title="enter description here" name="images/1521080549720.jpg"></div></div><p></p>
+<p><a href="http://www.hewebgl.com" target="_blank">文章出处：http://www.hewebgl.com</a></p>
+</div>
+
+</div></div>
+</body></html>
+

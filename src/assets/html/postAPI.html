@@ -1,0 +1,1331 @@
+<!DOCTYPE html><html lang="en"><head>
+<title> 中国国内可用API合集</title>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="()">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style type="text/css">
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0 0 1.1em;
+}
+
+small {
+  font-size: 85%;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+cite {
+  font-style: normal;
+}
+
+
+h1.story_title {
+    margin: 0.7em 0;
+}
+.story_tags {
+    margin: 0 0 1.2em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.5em 0;
+    margin: 1.0em 0 .6em 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 40px;
+}
+
+h1 {
+  font-size: 38.5px;
+}
+
+h2 {
+  font-size: 31.5px;
+}
+
+h3 {
+  font-size: 24.5px;
+}
+
+h4 {
+  font-size: 17.5px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11.9px;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 10px 35px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+
+dl {
+  margin-bottom: 20px;
+}
+
+dt,
+dd {
+  line-height: 20px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 10px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 20px;
+  border-left: 5px solid #dddddd;
+}
+
+blockquote p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+blockquote small {
+  display: block;
+  line-height: 20px;
+  color: #999999;
+}
+
+blockquote small:before {
+  content: '\2014 \00A0';
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+address {
+  display: block;
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 20px;
+}
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+    border: 1px solid rgba(34,36,38,.15);
+}
+.tag.label{
+display: inline-block;
+vertical-align: baseline;
+line-height: 1;
+margin: 0.125em 0.125em;
+background-color: #ebeeef;
+border-color: #ebeeef;
+background-image: none;
+padding: 0.6em 0.8em;
+color: #5e6060;
+text-transform: none;
+font-weight: bold;
+border-radius: 0.2857rem;
+box-sizing: border-box;
+font-size: 12px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #ffffff;
+}
+
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+tr { page-break-inside: avoid; }
+
+.story_image_container{
+   page-break-inside: avoid;
+}
+
+.xsj_underline{
+    page-break-after: always;
+    visibility: hidden;
+}
+
+.table-celled.table tr td,.table-celled.table tr th {
+    border-left: 1px solid rgba(34,36,38,.1)
+}
+
+.table-celled.table tr td:first-child,.table-celled.table tr th:first-child {
+    border-left: none
+}
+
+.toc ul {
+    list-style: none;
+}
+p {
+    line-height: 1.6;
+}
+body>p {
+  margin-bottom: 1.8em;
+}
+body>p>img.center,
+body>p>a>img.center {
+  display: block;
+  margin: 0 auto;
+  background-color: rgba(128,128,128,0.3);
+}
+body {
+    font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, 'Hiragino Sans GB', STHeiti, "Microsoft YaHei", "微软雅黑", 'WenQuanYi Micro Hei', STXihei, "华文细黑", Heiti, "黑体", SimSun, "宋体", Song, sans-serif;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 100;
+//  line-height: 1.8em;
+  color: #2f2f2f;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+em.cjk_emphasis{
+    font-style: normal;
+    font-family: Georgia,"Times New Roman",Times,"楷体","AR PL UKai CN", "NSimSun","Songti SC","SimSun",serif!important;
+}
+body dt,
+body dd {
+  line-height: 1.35em;
+}
+body code, body .xiaoshujiang_code {
+//  background-color: #D6DBDF;
+    border: 0;
+  border-radius: 4px;
+//  color: #2C3E50;
+  font-size: 90%;
+//  padding: 2px 4px;
+}
+code {
+    background-color: rgba(214, 219, 223, 0.28);
+    border-radius: 4px;
+    color: #2C3E50;
+    padding: 2px 4px;
+}
+.xiaoshujiang_code ol{
+    margin-bottom: 0px;
+}
+body h1 {
+  line-height: 1.6;
+}
+body h2 {
+  line-height: 1.1;
+}
+body h3 {
+  line-height: 1.1;
+}
+
+.hljs, .hljs * {
+  overflow: visible !important;
+} 
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ * Copyright (c) 2014-2015, Asciidocfx Team, (MIT Licensed)
+ * https://github.com/asciidocfx/highlight-treeview.js
+ */
+.language-treeview.hljs{
+  position: relative;
+}
+.hljs-folder,
+.hljs-hiddenfile,
+.hljs-file {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    height: 16px;
+}
+.hljs-folder:before,
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    top: 0;
+    content: '';
+    width: 14px;
+    height: 12px;
+    margin-top: 0px;
+    margin-right: 3px;
+    position: relative;
+    display: inline-block;
+    background-size: 14px;
+    background-repeat: no-repeat;
+}
+.hljs-file:before,
+.hljs-hiddenfile:before {
+    height: 14px;
+    margin-left: 1px;
+}
+.hljs-hiddenfile {
+    opacity: 0.6;
+}
+.hljs-file.photo:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c5";
+}
+.hljs-file.plain:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f016";
+}
+.hljs-file.source:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c9";
+}
+.hljs-file.archive:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c6";
+}
+.hljs-file.audio:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c7";
+}
+.hljs-file.video:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c8";
+}
+.hljs-file.pdf:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c1";
+}
+.hljs-file.xls:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c3";
+}
+.hljs-file.doc:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c2";
+}
+.hljs-file.ppt:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f1c4";
+}
+.hljs-folder:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f114";
+}
+.hljs-hiddenfile:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f016";
+}
+.hljs-tvline {
+    margin-left: 6px;
+    position: absolute;
+    text-indent: -99em;
+    padding-bottom: 8px;
+    vertical-align: top;
+    display: inline-block;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch {
+    width: 8px;
+    height: 8px;
+    margin-top: -1px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+}
+.hljs-folder-branch.win {
+    width: 14px;
+    margin-right: 2px;
+}
+.hljs-folder-last-branch {
+    height: 7px;
+    width: 7px;
+    margin-left: 6px;
+    text-indent: -99em;
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(94, 144, 117);
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(94, 144, 117);
+}
+.hljs-folder-last-branch.win {
+    width: 13px;
+    margin-right: 2px;
+}
+
+
+/**
+ * Treeview syntax highlighting based on highlight.js
+ */
+
+
+.mark{
+    border: 0;
+  background-color: rgba(221, 243, 231, 0.4);
+  border-radius: 4px;
+  color: #29754d;
+  font-size: 90%;
+  padding: 2px 4px;
+}
+.line_mark{
+    border: 1px dashed #3A4C42;
+    margin-top: 2px;
+}
+code .mark, .xiaoshujiang_code .mark{
+    border-radius: 0px;
+    font-size: initial;
+    padding: initial;
+}
+a.attachment{
+    background-color: #ecf0f3;
+    border: 1px solid #bec6cb;
+    display: inline-block;
+    padding: 5px;
+    margin: 2px;
+    min-width: 250px;
+}
+a.attachment i.fa{
+    font-size: 3em;
+  float: left;
+  margin-right: 0.2em;
+}
+a.attachment .filename{
+    vertical-align: top;
+  text-align: left;
+  font-weight: bold;
+}
+a.attachment .filesize{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  opacity: .6;
+  font-size: 80%;
+  white-space: nowrap;
+}
+.checkbox .checked{
+    text-decoration: line-through;
+}
+.flow-chart, .sequence-diagram{
+    text-align: center;
+}
+.plot, .plot-image{
+    text-align: center;
+    min-height: 200px;
+    min-width: 200px;
+}
+
+pre, .xiaoshujiang_pre {
+    line-height: initial !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    tab-size: 4;
+    white-space: pre-wrap;
+}
+.xiaoshujiang_code_container pre{
+    margin: 0px;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk{
+    box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+    margin: 1em 0;
+    padding: 1em;
+}
+.xiaoshujiang_code_container.xiaoshujiang_code_chunk_hide_code{
+    box-shadow: initial;
+    padding: initial;
+    padding-bottom: 2em;
+}
+.xiaoshujiang_code_container .out_put{
+    box-shadow: 0 0 0 1px #A3C293 inset,0 0 0 0 transparent;
+    margin: 1em 0;
+    background-color: #FCFFF5;
+    color: #2C662D;
+    padding: 1em;
+}
+.xiaoshujiang_code_container .out_put_error{
+    background-color: #FFF6F6;
+    color: #9F3A38;
+    margin: 1em 0;
+    box-shadow: 0 0 0 1px #E0B4B4 inset,0 0 0 0 transparent;
+    padding: 1em;
+}
+
+.xiaoshujiang_pre {
+    font-family: monospace;
+}
+
+.story_align_left, .story_align_left .story_image_container {
+    text-align: left;
+}
+.story_align_right, .story_align_right .story_image_container {
+    text-align: right;
+}
+.story_align_center, .story_align_center .story_image_container {
+    text-align: center;
+}
+.story_align_justify, .story_align_justify .story_image_container {
+    text-align: justify;
+}
+
+
+/** 
+ * code line nums
+ */
+code.hljs.code_linenums, .xiaoshujiang_code.hljs.code_linenums{
+    position: relative;
+}
+.ol_linenums{
+    padding: 0px;
+    margin-left: 2em;
+    border-left: 1px solid #e0e0e0;
+}
+.li_linenum{
+    position:relative;
+    margin-left: 0.5em;
+    list-style: none;
+    counter-increment: lines 1;
+}
+.li_linenum.li_list_style{
+    list-style: inherit;
+    margin-left: 5px;
+}
+.li_linenum:before, .li_linenum_before_span{
+    content: counter(lines, decimal);
+  position: absolute;
+  left: -3em;
+  text-align: center;
+  width: 2.5em;
+  vertical-align: top;
+}
+.li_linenum_before_span_hide{
+    display: none;
+}
+.xiaoshujiang_code .code_line_break_hack{
+    margin:0;
+    border:0;
+    border-top:0;
+    border-bottom:0;
+}
+/** 
+ * code line nums
+ */
+.mathjax-container{
+    text-align: center;
+}
+div.mathjax{
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+text{
+    font-size: 14px;
+}
+
+/**
+ * block image
+ */
+
+.story_image_container{
+    text-align: center;
+}
+.story_image_container>.story_image{
+    display: inline-block;
+  position: relative;
+    max-width: 80%;
+}
+.story_image_caption{
+    border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 10px;
+}
+.story_image_blank_caption{
+    border-bottom: 0px;
+}
+/**
+.story_image:before, .story_image:after{
+    content: '';
+    position: absolute;
+    z-index: -2;
+    bottom: 13px;
+    left: 10px;
+    width: 50%;
+    height: 20%;
+    border-radius: 10px/90px;
+    box-shadow: 0 15px 10px rgba(0,0,0,0.7);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+.story_image:after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    -ms-transform: rotate(3deg);
+    -o-transform: rotate(3deg);
+    transform: rotate(3deg);
+}
+
+**/
+.story_image>img{
+    border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+}
+.story_inline_image>img{
+    max-width: 50%;
+    vertical-align: bottom;
+}
+.story_remote_resource_block{
+    text-align: center;
+}
+.xiaoshujiang_code_container {
+    margin: 1em 0px;
+    position: relative;
+    padding-bottom: 2em;
+}
+
+
+.xiaoshujiang_code_title_container{
+    font-size: 70%;
+    opacity: 0.5;
+}
+.xiaoshujiang_code_title_container>.xiaoshujiang_code_infos{
+    float: right;
+}
+
+
+.task-list-item{
+    list-style: none;
+}
+.task-list-item.li_list_style{
+    list-style:inherit;
+}
+.task-list-item>input{
+    margin: 0 0 0 -20px;
+}
+.video_container{
+    width: 100%;
+    display: table;
+    text-align: center;
+    position: relative;
+    padding-bottom: 56.25%!important;
+}
+.slideshare_container .inner{
+    position: relative;
+    width: 100%;
+}
+.slideshare_container .inner iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.video_container iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+kbd{
+    display: inline-block;
+    padding: 3px 5px;
+    font-size: 11px;
+    line-height: 10px;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fcfcfc;
+    border: solid 1px #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.blank_anchor_id {
+    float: right;
+    width: 1px
+}
+.blank_anchor_id {
+    visibility: hidden;
+}
+.blank_anchor_id:before {
+    content: 'a';
+}
+
+blockquote footer{
+    margin: 1em 0;
+    font-style: italic;
+}
+
+blockquote footer cite {
+    margin: 0 1em;
+}
+/*wavedrom start*/
+
+.wavedrom_svg text, .wavedrom_svg_defs text {
+    font-size:11pt;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    font-stretch:normal;
+    text-align:center;
+    fill-opacity:1;
+    font-family:Helvetica
+}
+.wavedrom_svg .muted, .wavedrom_svg_defs .muted {
+    fill:#aaa
+}
+.wavedrom_svg .warning, .wavedrom_svg_defs .warning {
+    fill:#f6b900
+}
+.wavedrom_svg .error, .wavedrom_svg_defs .error {
+    fill:#f60000
+}
+.wavedrom_svg .info, .wavedrom_svg_defs .info {
+    fill:#0041c4
+}
+.wavedrom_svg .success, .wavedrom_svg_defs .success {
+    fill:#00ab00
+}
+.wavedrom_svg .h1, .wavedrom_svg_defs .h1 {
+    font-size:33pt;
+    font-weight:bold
+}
+.wavedrom_svg .h2, .wavedrom_svg_defs .h2 {
+    font-size:27pt;
+    font-weight:bold
+}
+.wavedrom_svg .h3, .wavedrom_svg_defs .h3 {
+    font-size:20pt;
+    font-weight:bold
+}
+.wavedrom_svg .h4, .wavedrom_svg_defs .h4 {
+    font-size:14pt;
+    font-weight:bold
+}
+.wavedrom_svg .h5, .wavedrom_svg_defs .h5 {
+    font-size:11pt;
+    font-weight:bold
+}
+.wavedrom_svg .h6, .wavedrom_svg_defs .h6 {
+    font-size:8pt;
+    font-weight:bold
+}
+.wavedrom_svg_defs .s1 {
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none
+}
+.wavedrom_svg_defs .s2 {
+    fill:none;
+    stroke:#000;
+    stroke-width:0.5;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none
+}
+.wavedrom_svg_defs .s3 {
+    color:#000;
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:1,3;
+    stroke-dashoffset:0;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s4 {
+    color:#000;
+    fill:none;
+    stroke:#000;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none;
+    stroke-dashoffset:0;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible
+}
+.wavedrom_svg_defs .s5 {
+    fill:#fff;
+    stroke:none
+}
+.wavedrom_svg_defs .s6 {
+    color:#000;
+    fill:#ffffb4;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s7 {
+    color:#000;
+    fill:#ffe0b9;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s8 {
+    color:#000;
+    fill:#b9e0ff;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s9 {
+    fill:#000;
+    fill-opacity:1;
+    stroke:none
+}
+.wavedrom_svg_defs .s10 {
+    color:#000;
+    fill:#fff;
+    fill-opacity:1;
+    fill-rule:nonzero;
+    stroke:none;
+    stroke-width:1px;
+    marker:none;
+    visibility:visible;
+    display:inline;
+    overflow:visible;
+    enable-background:accumulate
+}
+.wavedrom_svg_defs .s11 {
+    fill:#0041c4;
+    fill-opacity:1;
+    stroke:none
+}
+.wavedrom_svg_defs .s12 {
+    fill:none;
+    stroke:#0041c4;
+    stroke-width:1;
+    stroke-linecap:round;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-opacity:1;
+    stroke-dasharray:none
+}
+
+
+/*wavedrom stop*/
+
+.mermaid_svg{
+font-family: monospace;
+}
+
+@media print{
+  body{
+    word-wrap: break-word;
+    word-break: break-word;
+    background: initial;
+  }
+  .xiaoshujiang_element.xsj_anchor{
+    position: absolute;
+  }
+}
+
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}
+
+.hljs-formula {
+  background: #eee8d5;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs{background: #f5f5f5;border: 1px solid #ccc;color:#2f2f2f;}
+h1.story_title {font-size:28px;}
+
+</style>
+</head><body>
+<div><div class="preview" id="wmd-preview">
+
+	<div class="preview html_preview"><h1 class="story_title">中国国内可用API合集</h1><div class="story_tags"><span class="tag blue label">API</span>&nbsp;</div><div class="xiaoshujiang_element xsj_anchor">
+  <a name="e7ac94e8aeb0_1" class="blank_anchor_name"></a><a id="e7ac94e8aeb0_1" class="blank_anchor_id"></a><a name="笔记" class="blank_anchor_name"></a><a id="笔记" class="blank_anchor_id"></a>
+</div>
+<h4>笔记</h4>
+<ul>
+<li><a href="https://msdn.microsoft.com/en-us/office/office365/howto/onenote-landing" target="_blank">OneNote</a> - OneNote支持获取，复制，创建，更新，导入与导出笔记，支持为笔记添加多媒体内容，管理权限等。提供SDK和Demo。</li>
+<li><a href="http://www.wiz.cn/manual/plugin/" target="_blank">为知笔记</a> - 为知笔记Windows客户端开放了大量的API，其中绝大部分，都通过COM提供，可以在javascript, C#, C++, Delphi等语言中使用。接口通过IDL(Interface description language)语言描述。</li>
+<li><a href="https://dev.yinxiang.com/" target="_blank">印象笔记</a> - 印象笔记提供了ActionScript 3, Android, C++, Windows, iOS, Java, JavaScript, OS X, Perl, PHP, Python, Ruby等平台的SDK和完整的API参考文档，可通过API进行认证，笔记，笔记本，附件，搜索，同步等操作，同时提供企业版和本地API。</li>
+<li><a href="http://note.youdao.com/open/" target="_blank">有道云笔记</a> - 有道云笔记提供了Android SDK，同时Open API允许进行授权，用户，笔记本，笔记，分享，附件等方面的操作。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e587bae8a18c_2" class="blank_anchor_name"></a><a id="e587bae8a18c_2" class="blank_anchor_id"></a><a name="出行" class="blank_anchor_name"></a><a id="出行" class="blank_anchor_id"></a>
+</div>
+<h4>出行</h4>
+<ul>
+<li><a href="http://open.xiaojukeji.com/" target="_blank">滴滴</a> - 滴滴提供了iOS和Android SDK, 可实现拉起滴滴叫车等方面的操作。</li>
+<li><a href="http://developer.10101111.com/" target="_blank">神州专车</a> - 神州专车提供了API模式和H5模式两种接入模式，允许进行基础信息，订单，支付，充值，用户，发票，代金券，企业等方面的操作。</li>
+<li><a href="https://developer.uber.com/" target="_blank">Uber</a> - Uber提供了Android和iOS的SDK,允许进行乘客，行程体验，司机，派送次数等四大方面的操作。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e8af8de585b8_3" class="blank_anchor_name"></a><a id="e8af8de585b8_3" class="blank_anchor_id"></a><a name="词典" class="blank_anchor_name"></a><a id="词典" class="blank_anchor_id"></a>
+</div>
+<h4>词典</h4>
+<ul>
+<li><a href="http://api.fanyi.baidu.com/api/trans/product/index" target="_blank">百度翻译</a> - 百度翻译支持多种语言互相翻译，包含PHP, JS, Python, C, Java版Demo。</li>
+<li><a href="https://www.microsoft.com/en-us/translator/translatorapi.aspx" target="_blank">必应词典</a> - 微软翻译API支持文字和语音两种类型，支持多种语言互相翻译，提供C#版本Demo。</li>
+<li><a href="http://open.iciba.com/?c=api" target="_blank">金山词霸</a> - 金山词霸允许进行简单的翻译操作。</li>
+<li><a href="https://www.shanbay.com/help/developer/api_v1/" target="_blank">扇贝</a> - 扇贝提供了完整的API，允许进行用户，查询，添加学习记录，忘记单词，例句，笔记等方面的操作。</li>
+<li><a href="http://fanyi.youdao.com/openapi" target="_blank">有道词典</a> - 有道词典允许进行简单的翻译操作。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e794b5e59586_4" class="blank_anchor_name"></a><a id="e794b5e59586_4" class="blank_anchor_id"></a><a name="电商" class="blank_anchor_name"></a><a id="电商" class="blank_anchor_id"></a>
+</div>
+<h4>电商</h4>
+<ul>
+<li><a href="http://open.dangdang.com/" target="_blank">当当</a> - 当当允许商家用户和网站接入授权，可进行商品，订单，图片，问答，店铺和促销等方面的操作。</li>
+<li><a href="https://jos.jd.com/api/index.htm" target="_blank">京东</a> - 京东提供了Java, PHP, .net的SDK，授权后可进行多种操作。</li>
+<li><a href="http://open.suning.com/ospos/apipage/toApiListMenu.do" target="_blank">苏宁开放服务</a> - 苏宁提供了Java, PHP, .Net, Python版本的SDK，授权后可进行多种操作。</li>
+<li><a href="https://open.taobao.com/doc2/api_list.htm" target="_blank">淘宝开放平台</a> - 淘宝提供了Java, .Net, PHP, Python版本的SDK，授权后提供多种操作。</li>
+<li><a href="https://developer.amazon.com/public/zh" target="_blank">亚马逊</a> - 亚马逊提供多种语言版本的SDK，授权后允许多种操作。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e59cb0e59bbe_5" class="blank_anchor_name"></a><a id="e59cb0e59bbe_5" class="blank_anchor_id"></a><a name="地图" class="blank_anchor_name"></a><a id="地图" class="blank_anchor_id"></a>
+</div>
+<h4>地图</h4>
+<ul>
+<li><a href="http://lbsyun.baidu.com/" target="_blank">百度地图</a> - 百度地图提供了Android, iOS版本的SDK和JavaScript API，可进行定位、地图、数据、出行、鹰眼轨迹和分析服务。</li>
+<li><a href="http://lbs.amap.com/" target="_blank">高德地图</a> - 高德地图提供了JavaScript和web服务API，Android和iOS SDK，支持地图，定位，搜索，路线规划，导航和室内地图等。</li>
+<li><a href="http://lbs.qq.com/" target="_blank">腾讯地图</a> - 腾讯地图提供了JavaScript API，Android和iOS SDK，支持定位，地图，地点搜索，路线和导航等。</li>
+<li><a href="http://lbs.tianditu.com/api-new/home.html" target="_blank">天地图</a> - 天地图提供了H5 API和JavaScript API等web API，同时提供了Android和iOS SDK，支持基础地图服务，图层管理，地图覆盖物，地图工具，地名搜索和出行规划服务。</li>
+<li><a href="http://open.mapbar.com/" target="_blank">图吧地图</a> - 图吧提供了JavaScript和Flash API，Android和iOS SDK，支持定位，地址解析，位置标注，位置截图，路线规划，周边查询，兴趣点搜索和在线导航。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e794b5e5bdb1_6" class="blank_anchor_name"></a><a id="e794b5e5bdb1_6" class="blank_anchor_id"></a><a name="电影" class="blank_anchor_name"></a><a id="电影" class="blank_anchor_id"></a>
+</div>
+<h4>电影</h4>
+<ul>
+<li><a href="https://developers.douban.com/wiki/?title=movie_v2" target="_blank">豆瓣电影</a> - 豆瓣电影支持电影条目，影人条目，搜索和榜单等。</li>
+<li><a href="http://www.jianshu.com/p/9855610eb1d4" target="_blank">猫眼电影(非官方)</a> - 支持查询首页电影列表，电影详情(含评论)，本地影院和影院详情，选座。 #非官方</li>
+<li><a href="https://github.com/avenwu/vplus/blob/master/doc/v%E7%94%B5%E5%BD%B1api%E6%8E%A5%E5%8F%A3.md" target="_blank">V电影(非官方)</a> - 支持获取</li>
+<li><a href="https://github.com/jokermonn/-Api/blob/master/Time.md" target="_blank">Time时光(非官方)</a> - 支持获取</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e58db3e697b6e9809ae8aeaf_7" class="blank_anchor_name"></a><a id="e58db3e697b6e9809ae8aeaf_7" class="blank_anchor_id"></a><a name="即时通讯" class="blank_anchor_name"></a><a id="即时通讯" class="blank_anchor_id"></a>
+</div>
+<h4>即时通讯</h4>
+<ul>
+<li><a href="http://www.easemob.com/" target="_blank">环信</a> - 支持Android, iOS, WebIM, Linux, REST集成，支持多种消息类型。</li>
+<li><a href="http://rongcloud.cn/" target="_blank">融云</a> - 支持Android, iOS, Web, 游戏集成，支持多种消息类型。</li>
+<li><a href="http://netease.im/" target="_blank">网易云信</a> - 支持IM实时通讯，实时音视频，教学白班，专线电话，短信，聊天室，提供iOS, Android, Windows和Web SDK。</li>
+<li><a href="https://www.qcloud.com/product/im" target="_blank">腾讯云通信IM</a> - 提供iOS, Android, Windows和Web SDK，支持多种消息类型。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e5bc80e58f91e88085e7bd91e7ab99_8" class="blank_anchor_name"></a><a id="e5bc80e58f91e88085e7bd91e7ab99_8" class="blank_anchor_id"></a><a name="开发者网站" class="blank_anchor_name"></a><a id="开发者网站" class="blank_anchor_id"></a>
+</div>
+<h4>开发者网站</h4>
+<ul>
+<li><a href="https://open.coding.net/" target="_blank">Coding</a> - 授权后可访问coding.net网站的内容。</li>
+<li><a href="http://gank.io/api" target="_blank">干货集中营</a> - 提供妹子图和Android, iOS, 前端，拓展资源等内容。</li>
+<li><a href="https://www.diycode.cc/api" target="_blank">DiyCode</a> - 授权后可访问diycode网站的内容。</li>
+<li><a href="http://www.oschina.net/openapi" target="_blank">开源中国</a> - 授权后可访问开源中国网站的内容。</li>
+<li><a href="https://laravel-china.org/topics/3097" target="_blank">Laravel China</a> - 授权后可访问 Laravel China 网站的内容。</li>
+<li><a href="https://yuque.com/ruby-china/api/getting-started" target="_blank">Ruby China</a> - 授权后可访问Ruby China网站的内容。</li>
+<li><a href="https://www.v2ex.com/p/7v9TEc53" target="_blank">V2EX</a> - 可访问V2EX网站的内容。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e5bfabe98092e69fa5e8afa2_9" class="blank_anchor_name"></a><a id="e5bfabe98092e69fa5e8afa2_9" class="blank_anchor_id"></a><a name="快递查询" class="blank_anchor_name"></a><a id="快递查询" class="blank_anchor_id"></a>
+</div>
+<h4>快递查询</h4>
+<ul>
+<li><a href="http://www.aikuaidi.cn/api/" target="_blank">爱快递</a> - 爱快递支持国内90多家快递物流订单查询服务，免费版有使用次数限制，可用于电子商城单号跟踪,手机应用,微信快递接口等服务。</li>
+<li><a href="http://www.kuaidi100.com/openapi/" target="_blank">快递100</a> - 快递100支持300家国内国际快递，免费版有使用次数限制。</li>
+<li><a href="http://www.kdniao.com/" target="_blank">快递鸟</a> - 快递鸟支持国内外400多家快递公司，免费版有使用次数限制，包含.Net, PHP, Java版Demo。</li>
+<li><a href="http://www.kuaidi.com/openapi.html" target="_blank">快递网</a> - 快递网支持上百家快递查询服务，免费版有使用次数限制。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e69785e6b8b8_10" class="blank_anchor_name"></a><a id="e69785e6b8b8_10" class="blank_anchor_id"></a><a name="旅游" class="blank_anchor_name"></a><a id="旅游" class="blank_anchor_id"></a>
+</div>
+<h4>旅游</h4>
+<ul>
+<li><a href="http://open.qunar.com/" target="_blank">去哪儿</a> - 支持获取去哪儿网的内容。</li>
+<li><a href="http://open.tuniu.cn/" target="_blank">途牛</a> - 支持途牛网的内容，仅开放给供应商系统。</li>
+<li><a href="http://u.ctrip.com/union/help/Termsofuse.aspx" target="_blank">携程</a> - 支持携程网的内容。</li>
+<li><a href="http://open.elong.com/home/index" target="_blank">艺龙</a> - 支持获取产品数据，完成用户的预订，进行订单查询、更改或取消。提供在线工具，以及H5, Java, C#, PHP, Ruby版本的Demo。</li>
+<li><a href="https://github.com/jokermonn/-Api/blob/master/12306.md" target="_blank">12306(非官方)</a> - 支持获取12306火车票票数、票价查询。 #非官方</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e7a4bee4baa4_11" class="blank_anchor_name"></a><a id="e7a4bee4baa4_11" class="blank_anchor_id"></a><a name="社交" class="blank_anchor_name"></a><a id="社交" class="blank_anchor_id"></a>
+</div>
+<h4>社交</h4>
+<ul>
+<li><a href="https://open-doc.dingtalk.com/" target="_blank">钉钉</a> - 支持免登，企业通讯录，服务窗，钉盘，地图，会话，DING，电话，音频，扫码，支付，分享等服务，提供SDK和Demo，PC版UI规范，调试工具和钉钉UI组件库。</li>
+<li><a href="https://developers.douban.com/wiki/?title=guide" target="_blank">豆瓣</a> - 支持图书，电影，音乐，同城，广播，用户，日记，相册，线上活动，论坛，回复和我去等功能，提供豆瓣组件，豆瓣标示和Demo。</li>
+<li><a href="http://open.kaixin001.com/document.php" target="_blank">开心网</a> - 支持用户信息，登录授权，好友，传播应用，支付，分享内容，消息，交互，开心网应用等内容，提供SDK，开源插件和标示素材。</li>
+<li><a href="http://wiki.connect.qq.com/api%E5%88%97%E8%A1%A8" target="_blank">QQ互联</a> - 支持用户资料，QQ会员信息，空间相册，腾讯微博资料，分享到腾讯微博，微博好友信息，财付通信息等内容，提供SDK, Demo, 以及设计资源。</li>
+<li><a href="http://open.weibo.com/wiki/API" target="_blank">微博</a> - 支持粉丝服务，微博，评论，用户，关系，账号，收藏，搜索，提醒，短链，公共服务，位置服务，地理信息，地图引擎，支付以及OAuth2.0授权等内容，提供微博标示及SDK。</li>
+<li><a href="https://open.weixin.qq.com/" target="_blank">微信</a> - 支持移动应用，网站应用，公众账号，公众号第三方平台等内容，提供SDK, Demo, 以及设计资源。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e8a786e9a291_12" class="blank_anchor_name"></a><a id="e8a786e9a291_12" class="blank_anchor_id"></a><a name="视频" class="blank_anchor_name"></a><a id="视频" class="blank_anchor_id"></a>
+</div>
+<h4>视频</h4>
+<ul>
+<li><a href="http://open.iqiyi.com/" target="_blank">爱奇艺</a> - 支持弹幕，全色彩播放器，高清码流，视频托管，播放爱奇艺视频，应用分发，IOCP等内容。</li>
+<li><a href="https://github.com/fython/BilibiliAPIDocs" target="_blank">Bilibili(非官方)</a> - 支持登录，我的信息，番剧专题，视频/专题收藏、关注，番剧，弹幕等。 #非官方</li>
+<li><a href="http://www.lecloud.com/zh-cn/help/api.html" target="_blank">乐视</a> - 支持标准直播，标准点播，视频发行平台，移动直播等内容，提供SDK下载。</li>
+<li><a href="http://lm.tv.sohu.com/union/open_platform.do" target="_blank">搜狐视频</a> - 支持一二级内容获取，内容分类获取，视频详情信息，专辑详情信息，分级列表获取，关键词搜索等内容。</li>
+<li><a href="http://api.tudou.com/" target="_blank">土豆</a> - 支持视频模块，豆单模块，影视库模块，用户模块，转帖模块，字段定义模块等内容。</li>
+<li><a href="http://doc.open.youku.com/?spm=0.0.0.0.fOn6ND" target="_blank">优酷</a> - 支持内容输出，视频搜索，智能推荐，用户登录，用户互动，用户信息，视频上传至优酷，视频互动等内容，提供SDK。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e5a4a9e6b094_13" class="blank_anchor_name"></a><a id="e5a4a9e6b094_13" class="blank_anchor_id"></a><a name="天气" class="blank_anchor_name"></a><a id="天气" class="blank_anchor_id"></a>
+</div>
+<h4>天气</h4>
+<ul>
+<li><a href="http://wiki.swarma.net/index.php/%E5%BD%A9%E4%BA%91%E5%A4%A9%E6%B0%94API/v2" target="_blank">彩云天气</a> - 支持全球天气数据，两种空气质量数据，天气预报，实况天气，独家降水预报，独家空气质量预报，六种天气数据，四种生活指数数据等内容，部分功能收费。</li>
+<li><a href="http://www.kancloud.cn/hefengyun/weather/222344" target="_blank">和风天气</a> - 支持7-10天预报，实况天气，每小时预报，生活指数，灾害预警，景点天气，历史天气，城市查询等内容，仅国内数据免费。</li>
+<li><a href="https://www.seniverse.com/api" target="_blank">心知天气</a> - 支持天气实况，逐日预报和历史，24小时逐小时预报，过去24小时天气历史记录，气象灾害预警，空气质量实况与城市排行，逐日和逐小时空气质量预报，过去24小时空气质量历史记录，生活指数，农历、节气、生肖，机动车尾号限行，日出日落，月初月落和月像，城市搜索等内容，仅国内数据免费。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e59ba2e9989fe58d8fe4bd9c_14" class="blank_anchor_name"></a><a id="e59ba2e9989fe58d8fe4bd9c_14" class="blank_anchor_id"></a><a name="团队协作" class="blank_anchor_name"></a><a id="团队协作" class="blank_anchor_id"></a>
+</div>
+<h4>团队协作</h4>
+<ul>
+<li><a href="https://www.teambition.com/developer/open-platform" target="_blank">Teambition</a> - 支持详细的文档说明，部分平台提供demo。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e59bbee78987e4b88ee59bbee5838fe5a484e79086_15" class="blank_anchor_name"></a><a id="e59bbee78987e4b88ee59bbee5838fe5a484e79086_15" class="blank_anchor_id"></a><a name="图片与图像处理" class="blank_anchor_name"></a><a id="图片与图像处理" class="blank_anchor_id"></a>
+</div>
+<h4>图片与图像处理</h4>
+<ul>
+<li><a href="https://www.v2ex.com/t/157267" target="_blank">Bing每日壁纸(非官方)</a> - 支持图片URL和图片描述，可获取不同地区的数据。 #非官方</li>
+<li><a href="https://github.com/pinguo/PGSkinPrettifyEngine" target="_blank">Camera360</a> - 支持全帧率直播美白滤镜，提供SDK和Demo。</li>
+<li><a href="http://imgsdk.com/" target="_blank">嗨图</a> - 支持图片标注，仅提供iOS版本SDK。</li>
+<li><a href="https://dev.camcard.com/?language=zh-cn" target="_blank">名片全能王</a> - 支持精准识别几十种语言的名片，自动切边并美化名片图像，自动返回识别结果，提供多种版本SDK，收费。</li>
+<li><a href="http://www.intsig.com/zh/products/camcard_for_id" target="_blank">企业证件识别</a> - 支持身份证，驾驶证，护照等，收费。</li>
+<li><a href="https://dev.camscanner.com/?language=zh-cn" target="_blank">扫描全能王</a> - 支持图像智能剪裁，五种图像增强模式，手动调节图像细节，自动返回扫描结果等，提供iOS与Android版本SDK，收费。</li>
+<li><a href="http://api1.wozhitu.com/" target="_blank">我知图</a> - 支持相似图像搜索，图像识别匹配，图像识别关键词推荐，重复图片探测等内容。</li>
+<li><a href="http://www.intsig.com/zh/products/creditcard" target="_blank">银行卡|信用卡识别</a> - 提供SDK和API，收费。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e5a496e58d96_16" class="blank_anchor_name"></a><a id="e5a496e58d96_16" class="blank_anchor_id"></a><a name="外卖" class="blank_anchor_name"></a><a id="外卖" class="blank_anchor_id"></a>
+</div>
+<h4>外卖</h4>
+<ul>
+<li><a href="http://dev.waimai.baidu.com/" target="_blank">百度外卖</a> - 支持商户，菜品，商品，订单和基础数据等内容，提供SDK和Demo。</li>
+<li><a href="http://developer.dianping.com/" target="_blank">大众点评</a> - 支持商户，团购，在线预定，商品点评，数据统计，元数据等内容。</li>
+<li><a href="http://openapi.eleme.io/v2/quickstart.html" target="_blank">饿了么</a> - 支持查询，预定，订单，其他订单，数据推送，支付，评价，活动，账户同步，数据落地同步等内容。</li>
+<li><a href="http://developer.waimai.meituan.com/doc/show" target="_blank">美团外卖</a> - 支持门店，配送范围，菜品，药品，订单，订单推送等内容。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e6b688e681afe68ea8e98081_17" class="blank_anchor_name"></a><a id="e6b688e681afe68ea8e98081_17" class="blank_anchor_id"></a><a name="消息推送" class="blank_anchor_name"></a><a id="消息推送" class="blank_anchor_id"></a>
+</div>
+<h4>消息推送</h4>
+<ul>
+<li><a href="http://push.baidu.com/doc/restapi/restapi" target="_blank">百度云推送</a> - 支持iOS, Android和服务器端，支持推送，统计，组管理等Rest API接口。服务器端支持Java, Python, PHP, REST API。提供所支持各语言版本的SDK。</li>
+<li><a href="http://developer.huawei.com/push" target="_blank">华为推送</a> - 支持Android，提供SDK。</li>
+<li><a href="https://docs.jiguang.cn/jpush/server/push/rest_api_v3_push/" target="_blank">极光</a> - 支持Android, iOS, WindowsPhone, 服务器端REST API, 提供Java, Python, PHP, Ruby, C#, Node.js等版本的SDK。</li>
+<li><a href="https://leancloud.cn/docs/push_guide.html" target="_blank">LeanCloud</a> - 支持Android, iOS, WindowsPhone和Web网页推送，使用云引擎和JavaScript创建推送，使用REST API推送消息。提供Objectvie-C(开放源码), JavaScript(开放源码), Android, Unity, .Net, WindowsPhone, Java(开放源码), Python(开放源码), PHP(开放源码), C++(开放源码), Swift(开放源码)版本SDK。同时提供Demo。</li>
+<li><a href="http://xg.qq.com/" target="_blank">腾讯信鸽</a> - 支持iOS和Android平台，服务器端采用Rest API, 同时服务器端支持Java, PHP, Python等语言并提供SDK。</li>
+<li><a href="http://dev.xiaomi.com/console/appservice/push.html" target="_blank">小米</a> - 支持Android和iOS平台，服务器端支持Java, Python并提供SDK。</li>
+<li><a href="http://dev.umeng.com/push/android/api-doc" target="_blank">友盟</a> - 支持Android和iOS平台，服务器端支持PHP, Java, Python并提供SDK。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e99fb3e4b990_18" class="blank_anchor_name"></a><a id="e99fb3e4b990_18" class="blank_anchor_id"></a><a name="音乐" class="blank_anchor_name"></a><a id="音乐" class="blank_anchor_id"></a>
+</div>
+<h4>音乐</h4>
+<ul>
+<li><a href="https://my.oschina.net/skiden/blog/102025" target="_blank">百度音乐(非官方)</a> - 支持频道歌曲列表，专辑的歌曲列表，歌曲的详细信息，歌手专辑信息，搜索，歌手的所有歌曲，排行榜，所有专辑，所有歌手，歌手的专辑列表，歌手信息，歌词搜索，歌曲文件详细信息。 #非官方</li>
+<li><a href="https://developers.douban.com/wiki/?title=music_v2" target="_blank">豆瓣音乐</a> - 支持音乐信息，评论信息，标签信息，搜索音乐，某个音乐中标记最多的标签，发表、修改、删除评论，用户对音乐的所有标签等内容。</li>
+<li><a href="https://github.com/kaolafm/api" target="_blank">考拉FM</a> - 支持获取指定分类下列表和内容，搜索指定关键字内容，专辑/电台/直播详情，指定专辑下列表，指定电台播单，分类下专辑TOP50，指定期(碎片)所在专辑最新分页功能，分类下全部直播计划，版本升级接口，排行榜，精选，传统电台列表/详情/地区等。</li>
+<li><a href="http://wq.qq.com/" target="_blank">企鹅FM</a> - 支持获取电台分类列表，电台分类下的专辑信息列表，专辑下节目信息列表，电台节目播放链接，搜索关键字相关主播/专辑/节目，主播名下专辑，特定时间段内新增主播/更新的专辑/新增的专辑等。</li>
+<li><a href="https://github.com/ccchangkong/article/issues/23" target="_blank">QQ音乐(非官方)</a> - 支持歌曲榜单，歌曲/歌词地址，歌曲图片。 #非官方</li>
+<li><a href="http://open.qingting.fm/" target="_blank">蜻蜓FM</a> - 支持OAuth2.0授权，音频数据中心，分类，点播，直播，临时直播，排行榜，搜索，内容更新状态，主播，此刻，专题，活动等内容。</li>
+<li><a href="https://github.com/darknessomi/musicbox/wiki/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%96%B0%E7%89%88WebAPI%E5%88%86%E6%9E%90%E3%80%82" target="_blank">网易云音乐(非官方)</a> - 支持获取用户歌单，歌单详情，歌曲URL。 #非官方</li>
+<li><a href="http://open.ximalaya.com/index" target="_blank">喜马拉雅FM</a> - 支持Android和iOS平台，并提供相应的SDK和Demo，具体支持内容请下载相关文件查看。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e4ba91_19" class="blank_anchor_name"></a><a id="e4ba91_19" class="blank_anchor_id"></a><a name="云" class="blank_anchor_name"></a><a id="云" class="blank_anchor_id"></a>
+</div>
+<h4>云</h4>
+<ul>
+<li><a href="https://develop.aliyun.com/api?spm=5176.8142029.388261.274.4FJSwV" target="_blank">阿里云</a> - 支持弹性计算，数据库，存储与CDN，网络，应用服务，域名与网站等类别的内容，并提供了相关SDK。</li>
+<li><a href="https://cloud.baidu.com/doc/index.html" target="_blank">百度云</a> - 支持计算和网络，存储和CDN，数据库，安全和管理，数据分析，智能多媒体服务，物联网服务，人工智能，应用服务，网站服务，数字营销服务等内容，并提供相关的SDK。</li>
+<li><a href="http://www.bmob.cn/" target="_blank">Bmob</a> - 支持云数据库，容器服务，消息推送，文件存储，短信验证码，及时通讯，云端逻辑，定时任务，地理位置等。</li>
+<li><a href="https://leancloud.cn/" target="_blank">LeanCloud</a> -     支持云存储，数据分析，用户关系，实时通讯，消息推送，移动统计等。</li>
+<li><a href="http://www.qiniu.com/" target="_blank">七牛云</a> - 支持对象存储，融合CDN，直播云，数据处理等。</li>
+<li><a href="https://www.qcloud.com/doc/api" target="_blank">腾讯云</a> - 支持计算，网络，存储与CDN，数据库，安全服务，监控与管理，域名服务，视频服务，大数据与AI等内容，提供相关SDK。</li>
+<li><a href="https://www.upyun.com/" target="_blank">又拍云</a> - 支持 CDN、云存储、直播云、点播云、SSL证书服务、云处理、流量营销等。</li>
+<li><a href="https://www.wilddog.com/" target="_blank">野狗</a> - 支持实时数据同步，实时视频通话，及时通讯，短信，身份认证等。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e8afade99fb3e8af86e588ab_20" class="blank_anchor_name"></a><a id="e8afade99fb3e8af86e588ab_20" class="blank_anchor_id"></a><a name="语音识别" class="blank_anchor_name"></a><a id="语音识别" class="blank_anchor_id"></a>
+</div>
+<h4>语音识别</h4>
+<ul>
+<li><a href="http://yuyin.baidu.com/" target="_blank">百度语音</a> - 支持全平台REST API, 离线在线融合模式，深度语义解析，场景识别定制，自定义上传语料、训练模型，基础服务永久免费。提供相应SDK和Demo应用。</li>
+<li><a href="http://openspeech.sogou.com/Sogou/php/index.php" target="_blank">搜狗语音云开放平台</a> - 支持在线/离线语音识别，在线听歌识曲，离线语音合成等内容。提供相应平台SDK。</li>
+<li><a href="http://www.xfyun.cn/" target="_blank">讯飞开放平台</a> - 支持语音听写/转写，在线/离线命令词识别，语音唤醒等内容，平台支持广泛，提供相应SDK。</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e69d82e5bf97_21" class="blank_anchor_name"></a><a id="e69d82e5bf97_21" class="blank_anchor_id"></a><a name="杂志" class="blank_anchor_name"></a><a id="杂志" class="blank_anchor_id"></a>
+</div>
+<h4>杂志</h4>
+<ul>
+<li><a href="https://github.com/ZongweiBai/DoubanOpenDaily/blob/b87473b90911e687d291e847b133b5c4c4a700a3/app/src/main/java/com/monosky/daily/constant/APIConstData.java" target="_blank">豆瓣一刻(非官方)</a> - 支持获取指定日期文章列表，栏目总览，推荐作者，作者信息，作者更多文章信息，栏目文章列表及翻页，文章评论及热门评论列表。 #非官方</li>
+<li><a href="https://github.com/jokermonn/-Api/blob/master/ONEv3.5.0~.md" target="_blank">One一个(非官方)</a> - 支持获取首页图片，文章，音乐及电影。 #非官方</li>
+<li><a href="https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90" target="_blank">知乎日报(非官方)</a> - 支持获取界面启动图像，软件版本查询，最新消息，消息内容获取与离线下载，过往消息，新闻额外消息，新闻对应长/短评论查看，主题日报列表，主题日报内容，热门消息，栏目总览，栏目具体消息，新闻的推荐者，某个专栏之前的新闻，Editor的主页等。 #非官方</li>
+<li><a href="https://github.com/marktony/zhuanlan/wiki" target="_blank">知乎专栏(非官方)</a> - 支持获取指定专栏的信息，指定专栏的文章列表，指定的文章内容，评论列表，点赞信息。 #非官方</li>
+</ul>
+<div class="xiaoshujiang_element xsj_anchor">
+  <a name="e7bbbce59088_22" class="blank_anchor_name"></a><a id="e7bbbce59088_22" class="blank_anchor_id"></a><a name="综合" class="blank_anchor_name"></a><a id="综合" class="blank_anchor_id"></a>
+</div>
+<h4>综合</h4>
+<ul>
+<li><a href="http://www.avatardata.cn/Docs" target="_blank">阿凡达数据</a> - 支持金融股票，充值认证，便民类，新闻文章，医药交通，科教文艺，创意数据，及时通讯等内容。</li>
+<li><a href="https://dayu.aliyun.com/" target="_blank">阿里大于</a> - 支持验证码，短信通知，语音通知，流量钱包充值，私密专线，群发助手等内容。</li>
+<li><a href="https://www.apix.cn/" target="_blank">APiX</a> - 支持基础征信数据，信用分析服务，支付缴费接口等数据，部分免费。</li>
+<li><a href="http://apistore.baidu.com/" target="_blank">百度API STORE</a> - 支持多种类型数据，部分免费，提供SDK。</li>
+<li><a href="http://www.haoservice.com/" target="_blank">HaoService</a> - 支持多种类型数据。</li>
+<li><a href="https://www.juhe.cn/" target="_blank">聚合数据</a> - 支持多种类型数据，部分免费。</li>
+<li><a href="https://m.datayes.com/" target="_blank">通联数据</a> - 提供金融类数据，支持免费试用。</li>
+</ul>
+<p>文章出处：<a href="https://microzz.com/2017/02/03/API/" target="_blank">涵月天-microzz.com | IT技术分享</a></p>
+</div>
+
+</div></div>
+</body></html>
+

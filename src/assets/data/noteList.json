@@ -1,0 +1,112 @@
+{
+  "notes": [
+    {
+      "id": 15,
+      "caption": "webStorm常用设置之Tab模版设置",
+      "type": "webStorm",
+      "createtime": "2018-05-22",
+      "updatetime": "2018-05-22",
+      "intro": "摘要: 通过设置IDE模版，快速高效的使用Tab键写入代码，小伙伴们又可以偷个小懒了",
+      "url": "../src/assets/html/webStorm_TabSet.html"
+    },
+    {
+      "id": 14,
+      "caption": "中国国内可用API合集",
+      "type": "API",
+      "createtime": "2018-05-02",
+      "updatetime": "2018-05-02",
+      "intro": "摘要: 收集整理出国内各类API，涉及：笔记、出行、词典、电商、地图、电影、即时通讯、开发者网站、快递查询、旅游、社交、视频、天气等类别",
+      "url": "../src/assets/html/postAPI.html"
+    },
+    {
+      "id": 12,
+      "caption": "JavaScript方法之排序",
+      "type": "JavaScript",
+      "createtime": "2018-04-24",
+      "updatetime": "2018-04-24",
+      "intro": "摘要: 此处罗列出JavaScript十种排序方法",
+      "url": "../src/assets/html/JavaScript_sort.html"
+    },
+    {
+      "id": 11,
+      "caption": "vue-devtools安装 ",
+      "type": "vue",
+      "createtime": "2018-04-08",
+      "updatetime": "2018-05-22",
+      "intro": "摘要: 由于vue是数据驱动的，所以这就存在在开发调试中查看DOM结构并不能解析出什么。但是借助vue-devtools插件，我们就可以很容易的对数据结构进行解析和调试。",
+      "url": "../src/assets/html/vue-devtools.html"
+    },
+    {
+      "id": 8,
+      "caption": "JavaScript 常用方法",
+      "type": "JavaScript",
+      "createtime": "2018-03-12",
+      "updatetime": "2018-04-28",
+      "intro": "摘要: 判断运行客户端 计算带中文的字符串长度（中文2字符） 时间格式化 文件大小格式化 cookie获取 javascript?linenums function getcookie(objname) { var arrstr = document.cookie.split('; '); for (var",
+      "url": "../src/assets/html/JavaScript_method.html"
+    },
+    {
+      "id": 7,
+      "caption": "Markdown 语法学习",
+      "type": "Markdown",
+      "createtime": "2018-02-27",
+      "updatetime": "2018-02-27",
+      "intro": "摘要: 简介 Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown支持嵌入html标签。 注意：Markdown使用 、+、 等符号来标记，符号后面必须跟上至少1个空格才有效！ Markdown的常用语",
+      "url": "../src/assets/html/Markdown.html"
+    },
+    {
+      "id": 6,
+      "caption": "Sublime Text常用设置之个人配置",
+      "type": "Sublime Text",
+      "createtime": "2018-01-02",
+      "updatetime": "2018-01-02",
+      "intro": "摘要: 一、安装 1、安装包下载： http://www.sublimetext.com/3 (傻瓜式安装) 2、Package Control安装： 1)Ctrl+~或者View——Show Console菜单打开命令行 2)将以下代码输入命令行进行安装 import urllib.request,os,",
+      "url": "../src/assets/html/SublimeText_Setting.html"
+    },
+    {
+      "id": 5,
+      "caption": "webStorm常用设置之过滤文件夹",
+      "type": "webStorm",
+      "createtime": "2017-12-01",
+      "updatetime": "2017-12-01",
+      "intro": "摘要: webStorm是一款很好用的前端IDE，但是不能否认的是webStorm很重，没有sublime轻便 尤其是项目cnpm后，加载node_modules时的状态，简直想那块豆腐自杀有莫有，就算你耐心好熬过加载，后面使用也是经常卡死。奔溃中…… 所以忽略node_modules文件夹，让webSto",
+      "url": "../src/assets/html/webStorm_Setting.html"
+    },
+    {
+      "id": 4,
+      "caption": "HTTP详解",
+      "type": "网络相关",
+      "createtime": "2017-10-31",
+      "updatetime": "2017-10-31",
+      "intro": "摘要: 什么是HTTP协议 HTTP（HyperTextTransferProtocol）即超文本传输协议，目前网页传输的的通用协议。HTTP协议采用了请求/响应模型，浏览器或其他客户端发出请求，服务器给与响应。就整个网络资源传输而言，包括message-header和message-body两部分。首先传",
+      "url": "../src/assets/html/HTTP.html"
+    },
+    {
+      "id": 3,
+      "caption": "移动端适配之sprite雪碧图背景定位",
+      "type": "css/SASS/SCSS",
+      "createtime": "2017-10-18",
+      "updatetime": "2017-10-18",
+      "intro": "摘要: 移动端适配一般我会使用rem进行适配，大致操作就是按照一定尺寸设计稿进行制作，最后将所有px值转换为rem，但是一些手机背景精灵图(cssSprite)就会出现一些误差(1px左右)，如果公司要求不高倒也无所谓，但是我不能忍啊。 方法就是利用background-position百分比值替换rem值",
+      "url": "../src/assets/html/csssprite.html"
+    },
+    {
+      "id": 2,
+      "caption": "ruby安装及webStorm配置SCSS",
+      "type": "webStorm",
+      "createtime": "2017-10-17",
+      "updatetime": "2017-10-17",
+      "intro": "摘要: sass安装： 步骤：（window系统） 1、下载RubyInstaller(v2.4.3)，运行安装，基本直接next安装，不过有个add to PATH的选项一定要勾选，这样就不用配置环境变量。 2、在开始程序中找到Start Command Prompt with Ruby，如下图 v 3、",
+      "url": "../src/assets/html/webStorm_SCSS.html"
+    },
+    {
+      "id": 1,
+      "caption": "一个简单好用的http服务器",
+      "type": "网络相关",
+      "createtime": "2017-10-17",
+      "updatetime": "2017-10-17",
+      "intro": "摘要: http-server 是一个简单的零配置命令行HTTP服务器, 基于 nodeJs. 如果你不想重复的写 nodeJs 的 web-server.js, 则可以使用这个. 安装 (全局安装加 -g) : Windows 下使用: 在站点目录下开启命令行输入 访问: http://localhost",
+      "url": "../src/assets/html/http_server.html"
+    }
+  ]
+}
